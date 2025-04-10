@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
      <title>Admin Panel</title>
-<?php include('./inc/header.php') ?>
+<?php 
+include('./inc/header.php'); 
+include('./func/app.php')
+?>
 <main> 
       <section class=" Add-product-section column">
          <h1 >Add Product </h1>
@@ -32,7 +35,7 @@
                                      <option value="Accessory">Accessory</option>
                            </select>
                       </div>
-              
+                      <input type="submit" value="Add">
                </form>
       </section>
       <section>
