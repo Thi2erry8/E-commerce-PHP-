@@ -8,5 +8,16 @@ $conn = "";
 
 $conn ="";
 
-$conn = mysqli_connect()  ;
+$conn = mysqli_connect($db_server,
+                       $db_user,
+                       $db_pass,
+                       $db_name);
+
+      if($conn){
+        echo "You are connected";
+      }
+      else{
+        echo "You are connected";
+      }
+
 ?>
