@@ -23,12 +23,12 @@ include('./func/app.php');
              VALUES('$p_name','$p_price','$p_description','$target_file','$p_category') " ;
 
       if(mysqli_query($conn,$sql)){
-            echo"ok";          /* $msg= "Product Added"; */
-            /* echo"<script>alert('Product Added')</script>"; */
+            
+             echo"<script>alert('Product Added')</script>"; 
       }else{
             echo" not ok";
             /* $msg= "Product Not Added"; */
-            /* echo"<script>alert('Product Not Added')</script>"; */   
+             echo"<script>alert('Product Not Added')</script>";    
       }
 }   
 ?>
@@ -66,7 +66,7 @@ include('./func/app.php');
                </form>
       </section>
       <section>
-         <h1>All products<?= $msg ;?></h1>
+         <h1>All products</h1>
 
       </section>
 </main>
