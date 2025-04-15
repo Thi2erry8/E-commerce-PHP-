@@ -12,9 +12,6 @@
     --radius1: 15px;
     --radius2: 25px;
 }
-body{
-    background-color: var(--color4);
-}
 .row{
     display: flex;
     flex-direction: row;
@@ -65,7 +62,7 @@ section{
 .hero{
     height: 100vh;
     border-radius: var(--radius1);
-    background-color: var(--color5);
+    background-color: var(--color4);
 }
 
 
@@ -76,7 +73,7 @@ section{
     width: 50%;
     gap: 15px;
     border-radius: var(--radius1);
-    background-color: var(--color5);
+    background-color: var(--color4);
 }
 .Add-product-section{
     justify-content: space-around; 
