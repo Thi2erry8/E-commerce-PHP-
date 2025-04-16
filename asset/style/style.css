@@ -29,6 +29,9 @@ a{
     color: black ;
     font-size: 1em;
 }
+p{
+
+}
 header{
     display: flex;
     align-items: center;
@@ -57,7 +60,8 @@ header div{
 section{
     min-height: 100vh;
     width: 100%;
-    justify-content: s;
+    display: flex;
+    justify-content: center;
 }
 .hero{
     height: 100vh;
@@ -77,4 +81,40 @@ section{
 }
 .Add-product-section{
     justify-content: space-around; 
+}
+
+.product_card{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--color5) ;
+    border-radius: var(--radius1);
+}
+.box_img{
+    width: 100px;
+    height: auto;
+
+}
+.info_box{
+
+}
+.info_box p{
+    text-align: center;
+}
+.action_box{
+    width: 100%;
+    justify-content: space-evenly;
+}
+.action_box_btn{
+    border: none;
+    color: var(--color2);
+    font-size: 1em;
+    background-color: transparent;
+}
+.action_box_btn:hover{
+    color: var(--color1);
 }
