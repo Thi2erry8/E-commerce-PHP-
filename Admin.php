@@ -77,7 +77,7 @@ include('./func/app.php');
                             <img class="box_img" src="./image/d1088b0075e17a50efb4639cd9af3415.jpg"  alt="Ps4 controller">
                       </div>
                       <div class="info_box colunm">
-                             <p>Ps4 controller</p> 
+                             <p class="p_one">Ps4 controller</p> 
                              <p>Black</p> 
                       </div>
                       <div class="action_box row">

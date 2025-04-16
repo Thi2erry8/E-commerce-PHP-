@@ -1,16 +1,20 @@
 /*                                HEADER                               */
 :root{
-    --color1: hsl(0, 0%, 0%) ;
+    --color1: hsl(0, 0%, 11%) ;
     --color2: hsl(0, 0%, 24%) ;
     --color3: hsl(0, 0%, 52%) ;
-    --color4: hsl(0, 0%, 82%) ;
-    --color5: hsl(0, 0%, 98%) ;
-    --color6: hsl(0, 100%, 100%) ;
+    --color4: hsl(0, 0%, 73%) ;
+    --color5: hsl(0, 0%, 91%) ;
+    --color6: hsl(0, 0%, 98%) ;
+    --color7: hsl(0, 100%, 100%) ;
 
 
     /*Radius*/
     --radius1: 15px;
     --radius2: 25px;
+}
+   h1,h2,h3,h4{
+   font-family: 'Montserrat';
 }
 .row{
     display: flex;
@@ -30,7 +34,10 @@ a{
     font-size: 1em;
 }
 p{
-
+  font-family: 'Nunito';
+}
+.p_one{
+    font-weight: 700;
 }
 header{
     display: flex;
@@ -88,10 +95,11 @@ section{
     flex-direction:column;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 10px;
     width: fit-content;
     height: fit-content;
-    background-color: var(--color5) ;
+    background-color: var(--color6) ;
+    border: 1px solid var(--color5);
     border-radius: var(--radius1);
 }
 .box_img{
@@ -112,7 +120,7 @@ section{
 .action_box_btn{
     border: none;
     color: var(--color2);
-    font-size: 1em;
+    font-size: 1.2em;
     background-color: transparent;
 }
 .action_box_btn:hover{
