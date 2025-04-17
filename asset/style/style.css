@@ -89,6 +89,22 @@ section{
 .evenly{
     justify-content: space-evenly;
 }
+.data_box{
+    border-radius: var(--radius1);
+    background-color: var(--color6);
+    border: 1px solid var(--color5);
+    margin-right: 15px;
+    padding: 5px;
+    width: 135px;
+}
+.data_box h2{
+    text-align: center;
+}
+.data_box p{
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 2em;
+}
 .product-grid{
     display: grid;
     grid-template-columns: repeat(5,120px);

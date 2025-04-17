@@ -46,7 +46,21 @@ include('./func/app.php');
                <div class="row">
                      <div class="data_box colunm">
                            <h2>controller</h2>
-                           <p style="text-align:center"><?=$ContNumber ?></p>
+                           <p style="text-align:center"> <?=$ContNumber ?> </p>
+                     </div>
+
+                     <div class="data_box colunm">
+                           <h2>Console</h2>
+                           <p style="text-align:center"> <?=$ContNumber ?> </p>
+                     </div>
+
+                     <div class="data_box colunm">
+                           <h2>Accessory</h2>
+                           <p style="text-align:center"> <?=$ContNumber ?> </p>
+                     </div>
+                     <div class="data_box colunm">
+                           <h2>PcGaming</h2>
+                           <p style="text-align:center"> <?=$ContNumber ?> </p>
                      </div>
                </div>
       </section>
