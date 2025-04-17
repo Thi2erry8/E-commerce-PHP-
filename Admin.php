@@ -33,6 +33,12 @@ include('./func/app.php');
              echo"<script>alert('Product Not Added')</script>";    
       }
 }   
+   $data1 = "SELECT * FROM product";
+   $result = $conn->query($data1);
+
+   if(!$result){
+      die("Invalid query :" .$conn->error);
+   }
 ?>
 <main> 
       <section class=" Add-product-section column">
@@ -70,25 +76,44 @@ include('./func/app.php');
                       <input type="submit" name="submit" value="Add">
                </form>
       </section>
-      <section>
-         <h1>All products</h1>
-                <div class="product_card">
-                      <div class="img_box">
-                            <img class="box_img" src="./image/d1088b0075e17a50efb4639cd9af3415.jpg"  alt="Ps4 controller">
-                      </div>
-                      <div class="info_box colunm">
-                             <p class="p_one">Ps4 controller</p> 
-                             <p>Black</p> 
-                      </div>
-                      <div class="action_box row">
-                            <button class="action_box_btn">
-                                     <i class="ri-edit-fill"></i>
-                            </button>
-                            <button class="action_box_btn">
-                                     <i class="ri-delete-bin-line"></i>
-                            </button>     
-                      </div>
-                </div>
+      <section class="column">
+              <h1>All products</h1>
+              <div class="product-grid">
+                      <?php
+                      $i= 0;
+                           while($row = $result->fetch_assoc()){
+                             $i++;
+                              echo"
+                                   <div class='product_card'>
+                                       <div class='id_circle'>
+                                           <p>$i</p>
+                                       </div>
+                                       <div class='img_box'>
+                                           <img class='box_img' src='$row[product_img]' alt='$row[product_name]'>
+                                       </div>
+                                       <div class='info_box colunm'>
+                                           <p class='p_one'> $row[product_name]</p> 
+                                           <p>$row[color]</p> 
+                                      </div>
+                                      <div class='action_box row'>
+                                           <button class='action_box_btn'>
+                                                 <a href='./func/edit.php'>
+                                                    <i class='ri-edit-fill'></i>
+                                                </a>
+                                           </button>
+
+                                           <button class='action_box_btn'>
+                                                <a href='./func/delete.php'>
+                                                   <i class='ri-delete-bin-line'></i>
+                                                </a>
+                                           </button>     
+                                      </div>
+                                   </div>
+               
+                              ";
+                           }
+                      ?>
+                 </div>
       </section>
 </main>
 <?php include('./inc/footer.php') ?>
