@@ -40,7 +40,17 @@ include('./func/app.php');
       die("Invalid query :" .$conn->error);
    }
 ?>
-<main> 
+<main>
+      <section class="column evenly">
+               <h1>Inventory</h1>
+               <div class="row">
+                     <div class="data_box colunm">
+                           <h2>controller</h2>
+                           <p style="text-align:center"><?=$ContNumber ?></p>
+                     </div>
+               </div>
+      </section>
+
       <section class=" Add-product-section column">
          <h1 >Add Product </h1>
                <form method="POST" action="" class="Add-product column" enctype="multipart/form-data">
@@ -76,7 +86,7 @@ include('./func/app.php');
                       <input type="submit" name="submit" value="Add">
                </form>
       </section>
-      <section class="column">
+      <section class="column evenly">
               <h1>All products</h1>
               <div class="product-grid">
                       <?php
