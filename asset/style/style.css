@@ -1,6 +1,6 @@
 /*                                HEADER                               */
 :root{
-    --color1: hsl(0, 0%, 11%) ;
+    --color1: hsl(0 0% 3.9%) ;
     --color2: hsl(0, 0%, 24%) ;
     --color3: hsl(0, 0%, 52%) ;
     --color4: hsl(0, 0%, 73%) ;
@@ -78,13 +78,30 @@ section{
 
 /*Admin Panel*/
 .Add-product{
-    width: 50%;
+    width: fit-content;
+    padding: 30px;
     gap: 15px;
     border-radius: var(--radius1);
-    background-color: var(--color4);
+    border:1px solid var(--color3); 
 }
 .Add-product-section{
     justify-content: space-around; 
+}
+.Add-product input{
+    border-radius: 5px;
+    border:1px solid var(--color3);
+}
+.imgLabel{
+    border-radius: 5px;
+    border:1px solid var(--color3); 
+    padding: 5px;
+    background-color: var(--color7);
+    font-size: .8em;
+    font-weight: 500;
+   font-family: 'Nunito';
+}
+.Add-product input[type="file"]{
+display: none;
 }
 .evenly{
     justify-content: space-evenly;
