@@ -14,10 +14,10 @@ $conn = mysqli_connect($db_server,
                        $db_name);
 
       if($conn){
-        echo "You are connected";
+        echo '<i class="ri-wifi-line"></i>';
       }
       else{
-        echo "You are connected";
+        echo '<i class="ri-wifi-line"></i>';
       }
 
 ?>

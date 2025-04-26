@@ -2,7 +2,41 @@
 
     include('./func/app.php');
     include('./inc/header.php');
+    if(isset($_POST['submit'])){
+     
+      $p_name = $_POST['Pname'];
+      $p_price = $_POST['Pprice'];
+      $p_description = $_POST['Pdescrip'];
 
+      $target_dir = "image/";
+      $target_file = $target_dir.basename($_FILES['Pimg']['name']) ;
+      move_uploaded_file($_FILES['Pimg']['tmp_name'], $target_file);
+   
+      $p_category = $_POST['category'];
+
+      $p_color = $_POST['color'];
+      
+      $sql ="INSERT INTO 
+            product (product_name,product_price,product_description,product_img,product_category,color)
+             VALUES('$p_name','$p_price','$p_description','$target_file','$p_category','$p_color') " ;
+
+      if(mysqli_query($conn,$sql)){
+            
+             echo"<script>alert('Product Added')</script>"; 
+      }else{
+            echo" not ok";
+            /* $msg= "Product Not Added"; */
+             echo"<script>alert('Product Not Added')</script>";    
+      }
+}   
+   $data1 = "SELECT * FROM product";
+   $result = $conn->query($data1);
+
+   if(!$result){
+      die("Invalid query :" .$conn->error);
+   };
+
+   
 ?>
 <!DOCTYPE html>
 <html lang="en">

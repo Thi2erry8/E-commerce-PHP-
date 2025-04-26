@@ -6,39 +6,12 @@
 $msg ="";
 include('./inc/header.php'); 
 include('./func/app.php');
-   if(isset($_POST['submit'])){
-     
-      $p_name = $_POST['Pname'];
-      $p_price = $_POST['Pprice'];
-      $p_description = $_POST['Pdescrip'];
+$data1 = "SELECT * FROM product";
+$result = $conn->query($data1);
 
-      $target_dir = "image/";
-      $target_file = $target_dir.basename($_FILES['Pimg']['name']) ;
-      move_uploaded_file($_FILES['Pimg']['tmp_name'], $target_file);
-   
-      $p_category = $_POST['category'];
-
-      $p_color = $_POST['color'];
-      
-      $sql ="INSERT INTO 
-            product (product_name,product_price,product_description,product_img,product_category,color)
-             VALUES('$p_name','$p_price','$p_description','$target_file','$p_category','$p_color') " ;
-
-      if(mysqli_query($conn,$sql)){
-            
-             echo"<script>alert('Product Added')</script>"; 
-      }else{
-            echo" not ok";
-            /* $msg= "Product Not Added"; */
-             echo"<script>alert('Product Not Added')</script>";    
-      }
-}   
-   $data1 = "SELECT * FROM product";
-   $result = $conn->query($data1);
-
-   if(!$result){
-      die("Invalid query :" .$conn->error);
-   }
+if(!$result){
+   die("Invalid query :" .$conn->error);
+};
 ?>
 <main>
       <section class="column evenly">
@@ -74,7 +47,9 @@ include('./func/app.php');
                            while($row = $result->fetch_assoc()){
                              $i++;
                               echo"
+                                     
                                    <div class='product_card'>
+                                       <p style='display:none'>$row[id]'</p>
                                        <div class='id_circle'>
                                            <p>$i</p>
                                        </div>
@@ -87,7 +62,7 @@ include('./func/app.php');
                                       </div>
                                       <div class='action_box row'>
                                            <button class='action_box_btn'>
-                                                 <a href='./func/edit.php'>
+                                                 <a href='/func/edit.php'>
                                                     <i class='ri-edit-fill'></i>
                                                 </a>
                                            </button>
@@ -104,6 +79,7 @@ include('./func/app.php');
                            }
                       ?>
                  </div>
+                 <a href="./func/edit.php">fsjsyxzfgzgz</a>
       </section>
 </main>
 <?php include('./inc/footer.php') ?>
