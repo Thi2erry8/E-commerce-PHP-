@@ -47,8 +47,7 @@
 
             $result = $conn->query($sql);
              
-            /*header("location: ./admin.php"); */
-            echo  $color ;
+            header("location: ./admin.php"); 
         }
         while(false);
     } 
