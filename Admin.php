@@ -62,13 +62,13 @@ if(!$result){
                                       </div>
                                       <div class='action_box row'>
                                            <button class='action_box_btn'>
-                                                 <a href='/func/edit.php'>
+                                                 <a href='./edit.php?id=$row[id]'>
                                                     <i class='ri-edit-fill'></i>
                                                 </a>
                                            </button>
 
                                            <button class='action_box_btn'>
-                                                <a href='./func/delete.php'>
+                                                <a href='./delete.php?id=$row[id]'>
                                                    <i class='ri-delete-bin-line'></i>
                                                 </a>
                                            </button>     
@@ -79,7 +79,7 @@ if(!$result){
                            }
                       ?>
                  </div>
-                 <a href="./func/edit.php">fsjsyxzfgzgz</a>
+                 <a href="./edit.php">fsjsyxzfgzgz</a>
       </section>
 </main>
 <?php include('./inc/footer.php') ?>
