@@ -18,6 +18,6 @@
              </div>
 
              <div class="right">
-                    <button class="btn-login"> <a href="../login.php">login</a></button>
+                    <button class="btn-login"> <a href="./login.php">login</a></button>
              </div>
     </header>
