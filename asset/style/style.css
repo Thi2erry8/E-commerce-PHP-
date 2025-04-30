@@ -33,10 +33,11 @@ a{
     color: inherit ;
     font-size: 1em;
 }
-p{
+p,label,input{
   font-family: 'Nunito';
 }
-.p_one{
+
+.p_one,label{
     font-weight: 700;
 }
 header{
@@ -77,19 +78,31 @@ section{
 }
 
 /*Admin Panel*/
-.Add-product{
+
+form{
+    
     width: fit-content;
     padding: 30px;
     gap: 15px;
+    height: fit-content;
     border-radius: var(--radius1);
     border:1px solid var(--color3); 
 }
 .Add-product-section{
     justify-content: space-around; 
 }
-.Add-product input{
+form input{
     border-radius: 5px;
     border:1px solid var(--color3);
+    height: 30px;
+    font-size: 1em;
+}
+.Add-product-div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* justify-content: left;
+    align-items: center; */
 }
 .imgLabel{
     border-radius: 5px;

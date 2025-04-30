@@ -48,7 +48,7 @@
 <body>
        <main>
        <section class=" Add-product-section column">
-               <form method="POST" action="" class="Add-product column" enctype="multipart/form-data">
+               <form method="POST" action="" class="column" enctype="multipart/form-data">
                       <div class="Add-product-div">
                             <h2 class="form_title">
                                  Add Product
