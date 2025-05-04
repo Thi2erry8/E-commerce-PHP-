@@ -15,12 +15,14 @@
 }
    h1,h2,h3,h4{
    font-family: 'Montserrat';
+   text-align: center;
 }
 .row{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    gap: 15px;
 }
 .column{
     display: flex;
@@ -98,11 +100,18 @@ form input{
     font-size: 1em;
 }
 .Add-product-div{
+    width: 250px;
+    position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     /* justify-content: left;
     align-items: center; */
+}
+.icon_input{
+    position: absolute;
+    top: 33px;
+    left: 230px;
 }
 .imgLabel{
     border-radius: 5px;
@@ -115,6 +124,9 @@ form input{
 }
 .Add-product input[type="file"]{
 display: none;
+}
+.submit_btn{
+    width: 50%;
 }
 .evenly{
     justify-content: space-evenly;
@@ -152,6 +164,38 @@ display: none;
     background-color: var(--color6) ;
     border: 1px solid var(--color5);
     border-radius: var(--radius1);
+}
+.wrapper{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+}
+.switch_btn{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 800;
+}
+.signin , .login{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    transition: ease-in-out 0.5s;
+    
+}
+.signin{
+    z-index: 2;
+    transform: translateX(-150%);
+}
+.signin.active , .login.active {
+    transform: translateX(0%);
+    opacity: 1;
+    visibility: visible;
+}
+.login{
+    transform: translateX(100%); 
 }
 .id_circle{
     position: absolute;
