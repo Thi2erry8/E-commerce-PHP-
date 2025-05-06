@@ -14,14 +14,29 @@
 
        if($password1 != $password2){
             $error_msg = " passwords don't match ";
-       }else{
-            $password = $_POST['password2'];
-       }
-      
-       $sql=""
+       }else if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'")) > 0) {
+            $error_msg = "Email sa a deja egziste."; 
+       } else{
+             $password = $_POST['password2'];
        
+      
+         $sql="INSERT INTO
+            user (nom,prenom,email,phone,password)
+            VALUES ('$lastname','$firstname','$email','$phone','$password') ";
 
-    }
+           if(mysqli_query($conn,$sql)){
+            
+                echo"<script>alert('User Added')</script>"; 
+             }else{
+                echo" not ok";
+                  /* $msg= "Product Not Added"; */
+                echo"<script>alert('User Not Added')</script>";    
+            }
+
+          }
+      }
+
+    
 ?>
 <main>
        <section> 
@@ -72,7 +87,7 @@
                                  <i class="ri-lock-fill icon_input"></i>
                             </div>
                        </div>
-                           <p><?= $error_msg ?></p>
+                       <p id="error" style="color:red;"><?php echo $error_msg; ?></p>
                        <div class="Add-product-div" style="align-items: center;">
                                   <input class="submit_btn" type="submit" value="register" name="register">
                        </div>
@@ -103,7 +118,13 @@
                          <p>Don't have an account <button class="switch_btn">register</button></p>
                  </form>
             
-            
+                 <script>
+        // Efase erè a apre 3 segonn (3000 milisèkond)
+                         setTimeout(function() {
+                         const err = document.getElementById("error");
+                                if (err) err.remove();
+                          }, 3000);
+                </script>
                  
        </section>
 </main>
