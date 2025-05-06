@@ -1,6 +1,27 @@
 <?php 
     include('./inc/header.php'); 
     include('./func/app.php');
+     
+     $error_msg = "";
+
+    if (isset($_POST['register'])) {
+       $lastname = $_POST['lastname'];
+       $firstname = $_POST['firstname'];
+       $email = $_POST['email'];
+       $phone = $_POST['phone'];
+       $password1 = $_POST['password1'];
+       $password2 = $_POST['password2'];
+
+       if($password1 != $password2){
+            $error_msg = " passwords don't match ";
+       }else{
+            $password = $_POST['password2'];
+       }
+      
+       $sql=""
+       
+
+    }
 ?>
 <main>
        <section> 
@@ -51,9 +72,9 @@
                                  <i class="ri-lock-fill icon_input"></i>
                             </div>
                        </div>
-
+                           <p><?= $error_msg ?></p>
                        <div class="Add-product-div" style="align-items: center;">
-                                  <input class="submit_btn" type="submit" value="Sing up" name="Sing up">
+                                  <input class="submit_btn" type="submit" value="register" name="register">
                        </div>
                        <p> Already have an account <button class="switch_btn">login</button></p>
                  </form>
@@ -83,6 +104,6 @@
                  </form>
             
             
-                
+                 
        </section>
 </main>
