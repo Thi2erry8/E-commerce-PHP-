@@ -3,7 +3,7 @@
     include('./func/app.php');
      
      $error_msg = "";
-
+   //Register
     if (isset($_POST['register'])) {
        $lastname = $_POST['lastname'];
        $firstname = $_POST['firstname'];
@@ -15,7 +15,7 @@
        if($password1 != $password2){
             $error_msg = " passwords don't match ";
        }else if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'")) > 0) {
-            $error_msg = "Email sa a deja egziste."; 
+            $error_msg = "Email already exist."; 
        } else{
              $password = $_POST['password2'];
        
@@ -35,9 +35,31 @@
 
           }
       }
+      
+      //login
+     if (isset($_POST['Login'])) {
+         $email = $_POST['email'] ;
+         $password = $_POST['password'] ;
 
+         if($email !="" && $password !=""){
+                $req = $conn->query("SELECT * FROM user WHERE email = '$email' AND password = '$password' ");
+                $req = $req->fetch_assoc();
+             if($email='admin@gmail.com' && $password='admin1234'){
+                  header('location: ./Admin.php');
+                  exit();
+             }else if($req['id'] != false){
+                  echo "vous etes connecter";
+
+             }
+             else{
+                        $error_msg= " email or password invalid";  
+             }
+
+          }
+     }
     
-?>
+?>  
+    
 <main>
        <section> 
                  
@@ -119,7 +141,6 @@
                  </form>
             
                  <script>
-        // Efase erè a apre 3 segonn (3000 milisèkond)
                          setTimeout(function() {
                          const err = document.getElementById("error");
                                 if (err) err.remove();

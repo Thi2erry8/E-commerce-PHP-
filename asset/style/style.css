@@ -127,6 +127,12 @@ display: none;
 }
 .submit_btn{
     width: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.submit_btn:hover{
+    background-color: var(--color3);
+    color: var(--color5);
 }
 .evenly{
     justify-content: space-evenly;
