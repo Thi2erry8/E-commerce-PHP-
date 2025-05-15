@@ -4,9 +4,8 @@
      <title>Document</title>   
      <?php include('./inc/header.php') ?>
     <main>
-           <section class="hero">
-                     
-           </section>
+           <div style="background-image: url('./image/ps5_ontroller.jpg');" class="hero">
+                      <p>Le gaming est un art. Chez GamerHouse, nous fournissons les pinceaux.</p>
+</div>
     </main>
-       <script src="./asset/js/index.js"></script>
-<?php include('./inc/header.php') ?>
+       
