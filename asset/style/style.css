@@ -113,6 +113,12 @@ form input{
     top: 33px;
     left: 230px;
 }
+#reveal_btn{
+    cursor: pointer;
+}
+#reveal_btn:hover{
+    color: var(--color2);
+}
 .imgLabel{
     border-radius: 5px;
     border:1px solid var(--color3); 

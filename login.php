@@ -44,19 +44,20 @@
          if($email !="" && $password !=""){
                 $req = $conn->query("SELECT * FROM user WHERE email = '$email' AND password = '$password' ");
                 $req = $req->fetch_assoc();
-             if($email='admin@gmail.com' && $password='admin1234'){
-                  header('location: ./Admin.php');
-                  exit();
-             }else if($req['id'] != false){
+             }if($req['id'] != false){
                   echo "vous etes connecter";
 
+             }
+             else if($email='admin@gmail.com' && $password='admin1234'){
+               header('location: ./Admin.php');
+               exit();
              }
              else{
                         $error_msg= " email or password invalid";  
              }
-
+          
           }
-     }
+     
     
 ?>  
     
@@ -72,13 +73,13 @@
                        <div class="row">
                              <div class="Add-product-div">
                                     <label for="lastname">Your lastname</label>
-                                    <input type="text" name="lastname"> 
+                                    <input type="text" id="lastname" name="lastname"> 
                                     <i class="ri-user-fill icon_input"></i>                           
                               </div>
 
                               <div class="Add-product-div">
                                     <label for="firstname">Your firstname</label>
-                                    <input type="text" name="firstname">
+                                    <input type="text" id="firstname" name="firstname">
                                     <i class="ri-user-fill icon_input"></i>
                               </div>
                        </div> 
@@ -86,12 +87,12 @@
                        <div class="row">
                               <div class="Add-product-div">
                                       <label for="email">Your email</label>
-                                      <input type="email" name="email">
+                                      <input autocomplete="email" type="email" id="email" name="email">
                                       <i class="ri-mail-fill icon_input"></i>
                               </div>
                               <div class="Add-product-div">
                                      <label for="phone">Your phone</label>
-                                     <input type="phone" name="phone">
+                                     <input autocomplete="email" type="phone" id="phone" name="phone">
                                      <i class="ri-phone-fill icon_input"></i>
                               </div>
                        </div>
@@ -99,14 +100,14 @@
                        <div class="row">
                             <div class="Add-product-div">
                                   <label for="password1">Your password</label>
-                                  <input type="password" name="password1">
-                                  <i class="ri-lock-fill icon_input"></i>
+                                  <input class="password" id="password1" type="password" name="password1">
+                                  <i class="ri-eye-line icon_input" id="reveal_btn"></i>
                             </div>
 
                             <div class="Add-product-div">
                                  <label for="password2">Confirm your password</label>
-                                 <input type="password" name="password2">
-                                 <i class="ri-lock-fill icon_input"></i>
+                                 <input class="password" id="password2" type="password" name="password2">
+                                 <i class="ri-eye-line icon_input" id="reveal_btn"></i>
                             </div>
                        </div>
                        <p id="error" style="color:red;"><?php echo $error_msg; ?></p>
@@ -123,15 +124,15 @@
                         </div>
                       
                         <div class="Add-product-div">
-                                      <label for="email">Your email</label>
-                                      <input type="email" name="email">
+                                      <label for="email1">Your email</label>
+                                      <input autocomplete="email" type="email" id="email1" name="email">
                                       <i class="ri-mail-fill icon_input"></i>
                         </div>
 
                         <div class="Add-product-div">
                                   <label for="password">Your password</label>
-                                  <input type="password" name="password">
-                                  <i class="ri-lock-fill icon_input"></i>
+                                  <input  autocomplete="current-password" class="password" id="password" type="password" name="password">
+                                  <i class="ri-eye-line icon_input" id="reveal_btn"></i>
                          </div>
                          
                          <div class="Add-product-div" style="align-items: center;">
