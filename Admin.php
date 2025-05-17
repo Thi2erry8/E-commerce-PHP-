@@ -41,6 +41,7 @@ if(!$result){
 
       <section class="column evenly">
               <h1>All products</h1>
+              <a href="./create.php">Add product</a>
               <div class="product-grid">
                       <?php
                       $i= 0;

@@ -44,7 +44,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
 <body>
        <main>
        <section class=" Add-product-section column">
@@ -79,7 +78,7 @@
                            </select>
                       </div>
                      
-                      <div class="Add-product-div">
+                      <div class="Add-product-div" style="align-items: center;">
                       <label for="customFile" class="imgLabel"> <i class="ri-upload-cloud-line"></i> UPLOAD FILE</label> 
                           <input type="file"  name="Pimg" id="customFile" placeholder="Enter product" required>
                     </div>

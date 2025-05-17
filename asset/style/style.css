@@ -80,9 +80,10 @@ section{
     height: 90vh;
     border-radius: var(--radius1);
     background-color: var(--color4);
-        display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    filter: brightness(0.7);
 }
 
 .hero-text{
@@ -142,6 +143,7 @@ form input{
     color: var(--color2);
 }
 .imgLabel{
+    width: fit-content;
     border-radius: 5px;
     border:1px solid var(--color3); 
     padding: 5px;
@@ -150,7 +152,7 @@ form input{
     font-weight: 500;
    font-family: 'Nunito';
 }
-.Add-product input[type="file"]{
+ input[type="file"]{
 display: none;
 }
 .submit_btn{

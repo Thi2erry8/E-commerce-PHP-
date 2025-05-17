@@ -1,3 +1,6 @@
+<?php 
+     
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,5 +14,10 @@
                         </p>
                   </div>    
              </div>
+             <section class="section_product">
+                       <div class="row">
+                             
+                       </div>
+             </section>
     </main>
        
