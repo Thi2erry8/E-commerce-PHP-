@@ -200,7 +200,7 @@ display: none;
     background-color: var(--color6) ;
     border: 1px solid var(--color5);
     border-radius: var(--radius1);
-    overflow: hidden;
+   
 }
 .wrapper{
     width: fit-content;
