@@ -24,7 +24,6 @@
             
              echo"<script>alert('Product Added')</script>"; 
       }else{
-           trigger_error("Erreur personnalisée", E_USER_ERROR);
             /* $msg= "Product Not Added"; */
              echo"<script>alert('Product Not Added')</script>";    
       }
