@@ -24,7 +24,7 @@
             
              echo"<script>alert('Product Added')</script>"; 
       }else{
-            echo" not ok";
+           trigger_error("Erreur personnalisée", E_USER_ERROR);
             /* $msg= "Product Not Added"; */
              echo"<script>alert('Product Not Added')</script>";    
       }
@@ -66,7 +66,7 @@
                       </div>
                       
                       <div class="Add-product-div">
-                            <input type="text" name="color">
+                            <input type="text" name="color" placeholder="color" required>
                       </div>
 
                       <div class="Add-product-div">
