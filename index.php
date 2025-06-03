@@ -33,15 +33,15 @@
                                            <p>Black</p> 
                                       </div>
                                       <div class="action_box row">
-                                           <button class="action_box_btn">
-                                                 <a href="./edit.php?id=27">
-                                                    <i class="ri-edit-fill"></i>
+                                           <button class="action_box_btn2">
+                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                    <i class="ri-information-line"></i>
                                                 </a>
                                            </button>
 
-                                           <button class="action_box_btn">
-                                                <a href="./delete.php?id=27">
-                                                   <i class="ri-delete-bin-line"></i>
+                                           <button class="action_box_btn2">
+                                                <!-- <a href="./delete.php?id=27"> -->
+                                                   <i class="ri-shopping-cart-line"></i>
                                                 </a>
                                            </button>     
                                       </div>

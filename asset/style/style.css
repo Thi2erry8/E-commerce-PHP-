@@ -304,6 +304,7 @@ display: none;
     border-radius: var(--radius1);
 }
 .id_circle2{
+    cursor: pointer;
     position: absolute;
     display: flex;
     justify-content: center;
@@ -312,9 +313,17 @@ display: none;
     left: 90%;
     width: 30px;
     height: 30px;
-    font-size: 1.5em;
+    font-size: 1.3em;
     border-radius:50%;
     color: var(--color2);
     background-color: var(--color6);
     border: 1px solid var(--color3);
+    transition: 0.5s ease-in-out;
+}
+.action_box_btn2{
+    border: none;
+    cursor: pointer;
+    color: var(--color2);
+    font-size: 1.3em;
+    background-color: transparent;
 }
