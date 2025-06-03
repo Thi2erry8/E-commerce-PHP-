@@ -5,6 +5,7 @@
   if ($resultCont) {
     $dataCont = $resultCont->fetch_assoc();
     $ContNumber = $dataCont['controller'];
+    echo $ContNumber ;
     } else {
     echo "Erreur dans la requête : " . $conn->error;
     }
