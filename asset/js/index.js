@@ -29,3 +29,12 @@ reveal_btn.forEach((btn,index) => {
   
    })
 });
+
+// FAVORITE BTN
+const favBtn = document.querySelectorAll('.ri-heart-line');
+favBtn.forEach((btn) =>{
+  btn.addEventListener('click',() =>{
+      btn.classList.toggle('ri-heart-line');
+      btn.classList.toggle('ri-heart-fill');
+  });
+});
