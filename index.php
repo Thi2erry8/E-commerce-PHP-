@@ -35,10 +35,52 @@
                         <!-- <img src="./image/ps5_ontroller.jpg" alt=""> -->
                   </div> 
              </div>
-             <section class="section_product">
+             <section class="section_product column">
                        <div class=" container_product row">
                         <div class="Category">
-                               <p>Controller</p>
+                               <h2>Pc Gaming</h2>
+                        </div>
+                       <?php
+                            while($row=mysqli_fetch_array($resultCons)){
+                        ?>
+                                                                <div class="product_card2">
+
+                                       <p style="display:none">27'</p>
+                                       <div class="id_circle2">
+                                           <i class="ri-heart-line"></i>
+                                       </div>
+                                       <div class="img_box">
+                                           <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
+                                       </div>
+                                       <div class="info_box colunm">
+                                             <p class="p_one"> <?= $row['product_name'] ?></p> 
+                                             <p><?= $row['color'] ?></p> 
+                                             <p><?= $row['product_price'] ?> $</p>
+                                      </div>
+                                      <div class="action_box row">
+                                           <button class="action_box_btn2">
+                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                    <i class="ri-information-line"></i>
+                                                </a>
+                                           </button>
+
+                                           <button class="action_box_btn2">
+                                                <!-- <a href="./delete.php?id=27"> -->
+                                                   <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                           </button>     
+                                      </div>
+                                   </div>
+                        <?php
+                            }
+                        ?>  
+
+                       </div>
+                      
+                       <!-- Controller -->
+                     <div class=" container_product row">
+                        <div class="Category">
+                               <h2>Controller</h2>
                         </div>
                        <?php
                             while($row=mysqli_fetch_array($resultCont)){
@@ -76,6 +118,47 @@
                         ?>  
 
                        </div>
-             </section>
+                       
+                                              <div class=" container_product row">
+                        <div class="Category">
+                               <h2>Pc Gaming</h2>
+                        </div>
+                       <?php
+                            while($row=mysqli_fetch_array($resultPcgam)){
+                        ?>
+                                     <div class="product_card2">
+
+                                       <p style="display:none">27'</p>
+                                       <div class="id_circle2">
+                                           <i class="ri-heart-line"></i>
+                                       </div>
+                                       <div class="img_box">
+                                           <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
+                                       </div>
+                                       <div class="info_box colunm">
+                                             <p class="p_one"> <?= $row['product_name'] ?></p> 
+                                             <p><?= $row['color'] ?></p> 
+                                             <p><?= $row['product_price'] ?> $</p>
+                                      </div>
+                                      <div class="action_box row">
+                                           <button class="action_box_btn2">
+                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                    <i class="ri-information-line"></i>
+                                                </a>
+                                           </button>
+
+                                           <button class="action_box_btn2">
+                                                <!-- <a href="./delete.php?id=27"> -->
+                                                   <i class="ri-shopping-cart-line"></i>
+                                                </a>
+                                           </button>     
+                                      </div>
+                                   </div>
+                        <?php
+                            }
+                        ?>  
+
+                       </div>
+                    </section>
     </main>
        

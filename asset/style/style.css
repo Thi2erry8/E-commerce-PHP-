@@ -13,6 +13,9 @@
     --radius1: 15px;
     --radius2: 25px;
 }
+body{
+    overflow-x: hidden;
+}
    h1,h2,h3,h4{
    font-family: 'Montserrat';
    text-align: center;
@@ -68,21 +71,25 @@ header div{
     background-color: var(--color1);
 }
 section{
+    margin: 25px;
     min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+
 }
 /* HERO */
 .hero{
     position: relative;
-
     height: 90vh;
     border-radius: var(--radius1);
     display: flex;
     justify-content: center;
     align-items: center;
-    
     overflow: hidden;
 }
 .hero_img{
@@ -329,5 +336,17 @@ display: none;
     background-color: transparent;
 }
 .container_product{
+    position: relative;
     gap: 15px;
+    padding: 25px;
+    height: fit-content;
+    overflow-x: scroll;
+}
+.Category{
+    position: absolute;
+    top:-20%;
+    font-size: 2em;
+}
+.section_product{
+    gap: 25px;
 }
