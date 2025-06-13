@@ -1,0 +1,17 @@
+.product_img_container{
+    height: 70vh;
+    width: 50%;
+    overflow: hidden;
+}
+.product_img{
+    height: 100%;
+    width: auto;
+    border-radius: 10px;
+}
+.product_description{
+    height: 71vh;
+    width:50%;
+    background-color: var(--color7);
+    margin-left: -5%;
+    align-items: start;
+}
