@@ -12,12 +12,21 @@
                              <img class="product_img" src="./image/ps5_ontroller.jpg" alt="">
                        </div>
                        <div class="column product_description">
-                             <p>Ps5 controller</p>
-                             <p>controller</p>
-                             <p>150$</p>
-                             <p>white</p>
-                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat nesciunt eum dolorum dignissimos nisi? At laudantium repellendus sapiente laboriosam exercitationem.</p>
-                             <button> Add to card </button>
+                             <p class="product_name">Ps5 controller</p>
+                             <p class="product_category">controller</p>
+                             <p class="product_price">150$</p>
+                             <p class="product_color">white</p>
+                             <p class="product_description">
+                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                                 Placeat nesciunt eum dolorum dignissimos nisi? At laudantium 
+                                 repellendus sapiente laboriosam exercitationem.
+                             </p>
+                             
+                       </div>
+                       <div class="column buying_action">
+                              <p class="product_price">150$</p>
+                              <p class="delivery">Delivry in 3 days</p>
+                              <button> Add to card </button>
                        </div>
                  <!-- </div> -->
        </section>
