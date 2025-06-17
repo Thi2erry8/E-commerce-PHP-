@@ -1,6 +1,11 @@
+.product_info{
+   justify-content: flex-start;
+   margin:0;
+   padding-top: 0;
+}
 .product_img_container{
     height: 70vh;
-    width: 30%;
+    width: 50%;
     overflow: hidden;
 }
 .product_img{
@@ -10,30 +15,29 @@
 }
 .product_description{
     height: 70vh;
-    width:30%;
+    width:25%;
     background-color: var(--color7);
     margin-left: -5%;
     padding-top: 10px;
     align-items: start;
     gap: 25px;
     padding-left: 15px;
-    background-color: aquamarine;
     justify-content: flex-start;
 }
-.product_description p{
+.product_description p , .buying_action p{
     margin: 0;
 }
-.product_category , .product_color , .product_infos{
-    font-size: 1.2em
+.product_category , .product_color , .product_detail{
+    font-size: 1.1em
 }
 .product_name{
     font-weight: 600;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 .product_price{
     position: relative;
     font-weight: 500;
-    font-size: 2em;   
+    font-size: 1.7em;   
 }
 .expo_price{
    position: absolute;
@@ -43,5 +47,26 @@
 }
 .buying_action{
    height: 70vh;
-
+   width: 25%;
+   justify-content: flex-start;
+   gap: 25px;
+}
+.buying_action button{
+    width: 70%;
+    padding: 5px;
+    font-size: 1em;
+    font-family: 'Nunito';
+    font-weight: 700;
+    border-radius: 25px;
+    border:  1px solid var(--color4);
+}
+.btn_action{
+    width: 100%;
+    gap: 15px;
+}
+.buying_action select{
+    width: 70%;
+    background-color: var(--color6);
+    height: 25px;
+    border-radius: 5px;
 }

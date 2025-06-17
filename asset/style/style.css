@@ -38,7 +38,7 @@ a{
     color: inherit ;
     font-size: 1em;
 }
-p,label,input{
+p,label,input,button{
   font-family: 'Nunito';
 }
 
