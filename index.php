@@ -59,7 +59,7 @@
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'> 
                                                     <i class="ri-information-line"></i>
                                                 </a>
                                            </button>
@@ -101,7 +101,7 @@
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
                                                     <i class="ri-information-line"></i>
                                                 </a>
                                            </button>
@@ -142,7 +142,7 @@
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
                                                     <i class="ri-information-line"></i>
                                                 </a>
                                            </button>

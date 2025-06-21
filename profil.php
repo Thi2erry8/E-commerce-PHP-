@@ -6,6 +6,29 @@
     $p_description = "";
     $p_category="";
     $p_color="";
+    $p_stock="";
+
+    if($_SERVER['REQUEST_METHOD'] =='GET'){
+      // GET METHOD : SHOW THE DATA OF THE CLIENT
+      if(!isset($_GET["id"])){
+            header("location: ./index.php");
+            exit;
+      }
+
+      $id = $_GET['id'];
+
+      // read the row of the selected client from database table
+      $sql ="SELECT * FROM product WHERE id=$id";
+      $result =$conn->query($sql);
+      $row = $result-> fetch_assoc();
+       $p_name = $row['product_name'];
+       $p_price = $row['product_price'];
+       $p_description = $row['product_description'];
+       $p_category= $row['product_category'];
+       $p_image= $row['product_img'];
+       $p_color= $row['color'];
+       $p_stock= $row['stock'];
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,28 +41,34 @@
        <section class="product_info">
                  
                        <div class="product_img_container">
-                             <img class="product_img" src="./image/ps5_ontroller.jpg" alt="">
+                             <img class="product_img" src="<?= $p_image?>" alt="">
                        </div>
 
                        <div class="column product_description">
-                             <p class="product_name">Ps5 controller</p>
-                             <p class="product_category">controller</p>
-                             <p class="product_price"><span class="expo_price">$</span>150</p>
+                             <p class="product_name"><?= $p_name?></p>
+                             <p class="product_category"><?= $p_category?></p>
+                             <p class="product_price"><span class="expo_price">$</span><?= $p_price?></p>
                              <p class="product_color">white</p>
                              <p class="product_detail">
-                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                                 Placeat nesciunt eum dolorum dignissimos nisi? At laudantium 
-                                 repellendus sapiente laboriosam exercitationem.
+                                 <?= $p_description ?>
                              </p> 
                        </div>
 
                        <div class="column buying_action">
-                              <p class="product_price"><span class="expo_price">$</span>150</p>
+                              <p class="product_price"><span class="expo_price">$</span><?= $p_price?></p>
                               <p class="delivery">Delivry in 3 days</p>
-                              <p>In Stock : <span> 125</span> </p>
-                              <select name="Quantity" id="">
-                                       <option value="1">Quantity :1</option>
-                                       <option value="2">Quantity :2</option>
+                              <p>In Stock : <span> <?= $p_stock?></span> </p>
+                              <select  name="Quantity" id="">
+                              <?php
+                                   $i=1;
+                                   while($i<=$p_stock){
+                              ?>
+                                       <option value="<?= $i?>">Quantity :<?= $i?></option>
+                                       
+                              
+                              <?php
+                                  $i++ ;}
+                              ?>
                               </select>
                               <div class="column btn_action">
                                     <button> Add to card </button>
@@ -50,10 +79,14 @@
                  
        </section>
        <div class="column same_category">
-            <h1>Same category</h1>
+            <h1>Same category( <?= $p_category?>)</h1>
             <div class="row">
-                     <?php
-                            while($row=mysqli_fetch_array($resultPcgam)){
+                     <?php  
+                            $sql2="SELECT * FROM product WHERE product_category='$p_category' AND id !=$id ";
+                            $result2 = $conn->query($sql2) ;  
+                            $row = $result2->fetch_assoc(); 
+
+                            while($row=mysqli_fetch_array($result2)){
                         ?>
                                      <div class="product_card2">
 
@@ -71,7 +104,7 @@
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <!-- <a href="./edit.php?id=27"> -->
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
                                                     <i class="ri-information-line"></i>
                                                 </a>
                                            </button>     

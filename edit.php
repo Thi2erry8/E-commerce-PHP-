@@ -16,7 +16,6 @@
        } 
 
        $id = $_GET['id'];
-       
        //readb the row of the selected client from database table
        $sql ="SELECT * FROM product WHERE id=$id";
        $result = $conn->query($sql);
