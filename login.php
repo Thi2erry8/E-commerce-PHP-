@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include('./inc/header.php'); 
     include('./func/app.php');
      
@@ -27,12 +28,22 @@
            if(mysqli_query($conn,$sql)){
             
                 echo"<script>alert('User Added')</script>"; 
-             }else{
+        
+              $sqla= "SELECT * FROM user WHERE email = '$email' " ;
+              $request= $conn ->query($sqla);
+              $row= $request ->fetch_assoc();
+              $_SESSION['role']='utilisateur';
+              $_SESSION['nom']= $lastname ;
+              $_SESSION['id']= $row['id'];
+
+              header('location: ./index.html');
+          
+            }else{
                 echo" not ok";
                   /* $msg= "Product Not Added"; */
                 echo"<script>alert('User Not Added')</script>";    
             }
-
+            
           }
       }
       
