@@ -1,5 +1,6 @@
 <?php 
     session_start();
+    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'] ;
     include('./inc/header.php'); 
     include('./func/app.php');
      
