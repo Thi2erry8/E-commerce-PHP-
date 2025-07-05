@@ -1,17 +1,19 @@
 <?php
   session_start();
-  
+  include('./connect.php');
+
+    
   if(!isset($_SESSION['id'])){
      die("Vous devez être connecté.");
-  }
-
-  if(isset($_POST['id'])){
+  };
+  
+  if(isset($_POST['produit_id'])){
     $user_id = $_SESSION['id'];
-    $product_id = $_POST['id'] ;
+    $produit_id = intval($_POST['produit_id']);
+    $sql ="INSERT INTO favoris (user_id,product_id) VALUES ('$user_id','$produit_id')";
+    mysqli_query($conn,$sql);
 
-    $sql ="INSERT INTO favoris (user_id,product_id) VALUES ($user_id,$product_id)";
-    mysqli_query($con,$sql);
-
-    header("location:" .$_SESSION['prev_page']);
+    header('location: ../index.php'); 
 }
+exit();
 ?>

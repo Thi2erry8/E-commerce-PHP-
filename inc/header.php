@@ -20,6 +20,7 @@
              </div>
 
              <div class="right">
+                <?= isset($_SESSION['id']) ? 'Bonjour ' .$_SESSION['nom']  :  '' ?>
                     <button class="btn-login"> <a href="./login.php">login</a></button>
              </div>
     </header>

@@ -8,6 +8,11 @@
     --color6: hsl(0, 0%, 98%) ;
     --color7: hsl(0, 100%, 100%) ;
 
+    --red1 : hsl(0, 100%, 5%);
+    --red2 : hsl(0, 100%, 15%);
+    --red3 : hsl(0, 100%, 26%);
+    --red4 : hsl(0, 100%, 35%);
+    --red5 : hsl(0, 100%, 50%);
 
     /*Radius*/
     --radius1: 15px;
@@ -127,7 +132,7 @@ section{
 
 /*Admin Panel*/
 
-form{
+.register_form{
     
     width: fit-content;
     padding: 30px;
@@ -323,10 +328,17 @@ display: none;
     height: 30px;
     font-size: 1.3em;
     border-radius:50%;
-    color: var(--color2);
+    color: var(--red5);
     background-color: var(--color6);
     border: 1px solid var(--color3);
     transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+.fav_btn{
+    color: inherit;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
 }
 .action_box_btn2{
     border: none;

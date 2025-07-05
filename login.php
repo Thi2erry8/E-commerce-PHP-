@@ -1,6 +1,6 @@
 <?php 
     session_start();
-    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'] ;
+    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
     include('./inc/header.php'); 
     include('./func/app.php');
      
@@ -58,10 +58,16 @@
                 $req = $req->fetch_assoc();
              }if($req['id'] != false){
                   echo "vous etes connecter";
+                 $_SESSION['role']='utilisateur';
+                 $_SESSION['nom']= $req['nom'] ;
+                 $_SESSION['id']= $req['id'];
+
+                header('location: ./index.php');
 
              }
              else if($email='admin@gmail.com' && $password='admin1234'){
                header('location: ./Admin.php');
+               $_SESSION['role']='admin';
                exit();
              }
              else{
@@ -76,7 +82,7 @@
 <main>
        <section> 
                  
-                 <form class="column signin active" method="post">
+                 <form class="register_form column signin active" method="post">
                         <div class="Add-product-div">
                               <h2 class="form_title">
                                   Register
@@ -128,7 +134,7 @@
                        </div>
                        <p> Already have an account <button class="switch_btn">login</button></p>
                  </form>
-                 <form method="post" class="column login">
+                 <form method="post" class="register_form column login">
                         <div class="Add-product-div">
                               <h2 class="form_title">
                                   log in
