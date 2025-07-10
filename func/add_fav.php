@@ -4,7 +4,10 @@
 
     
   if(!isset($_SESSION['id'])){
-     die("Vous devez être connecté.");
+     /* echo "<script>alert('Bonjour')</script>"; */
+       die("Vous devez être connecté.");  
+      
+     header('location: ../index.php'); 
   };
   
   if(isset($_POST['produit_id'])){

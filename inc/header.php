@@ -21,6 +21,10 @@
 
              <div class="right">
                 <?= isset($_SESSION['id']) ? 'Bonjour ' .$_SESSION['nom']  :  '' ?>
+                
+                <?= isset($_SESSION['id']) ? '<button class="btn-login"> <a href="./favorite.php">favorites</a></button>'  :  '' ?>
                     <button class="btn-login"> <a href="./login.php">login</a></button>
+
+
              </div>
     </header>

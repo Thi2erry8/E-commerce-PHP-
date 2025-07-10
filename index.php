@@ -1,7 +1,7 @@
 <?php 
     session_start(); 
     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
-    
+    echo $_SESSION['role'];
     include('./func/app.php');
       //SelectDataProduct
      
@@ -179,5 +179,7 @@
 
                        </div>
                     </section>
+                    
+                
     </main>
        
