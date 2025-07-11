@@ -1,7 +1,7 @@
 <?php 
     session_start(); 
     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
-    echo $_SESSION['role'];
+
     include('./func/app.php');
       //SelectDataProduct
      
@@ -23,7 +23,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <title>Document</title>   
+     <title>GamerHouse</title>   
      <?php include('./inc/header.php') ?>
     <main>
              <div class="hero">
