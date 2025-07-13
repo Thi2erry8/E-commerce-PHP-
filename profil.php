@@ -1,4 +1,5 @@
 <?php
+session_start();
      include('./func/app.php');
 
     $p_name="";
@@ -71,7 +72,9 @@
                               ?>
                               </select>
                               <div class="column btn_action">
-                                    <button> Add to card </button>
+                                <form method="" action="" style=" width: 100%;" class="row">
+                                    <button type="submit" name="Tocart"> Add to card </button>
+                                </form>
                                     <button> Buy now </button>
                               </div>
                               
