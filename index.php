@@ -38,28 +38,23 @@
                   </div> 
              </div>
              <section class="section_product column">
-                       <div class=" container_product row">
-                        <div class="Category">
-                               <!-- <h2>Pc Gaming</h2> -->
+                     <div class="column">
+                           <div class="Category">
+                               <h2>Pc Gaming</h2> 
                         </div>
+                        <div class=" container_product row">
                        <?php
                             $i=0;
                             $isfavorite = false ;
-                        
-                        
                             while($row=mysqli_fetch_array($resultCons)){
                                  
                             if (isset($_SESSION['id'])) {
                                 $State = $conn->query(" SELECT * FROM favoris WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
                                 $isfavorite = (mysqli_num_rows($State) > 0) ;
                                 $State = $State->fetch_assoc() ;
-                            }
-                            
-                           
-                           
+                            } 
                         ?>
-                                                                <div class="product_card2">
-
+                             <div class="product_card2">
                                        <p style="display:none">27'</p>
                                        <form method="post" action=" <?= $isfavorite ? './func/del_fav.php' : './func/add_fav.php' ?> " class="id_circle2">
                                              <input type="hidden" name="produit_id" value="<?= $row['id'] ?>">
@@ -89,12 +84,14 @@
                                            </button>     
                                       </div>
                                    </div>
-                        <?php
+                           <?php
                            $i++;
-                        }
-                        ?>  
+                            }
+                           ?>  
 
-                       </div>
+                           </div>
+                     </div>
+                     
                       
                        <!-- Controller -->
                      <div class=" container_product row">

@@ -95,7 +95,7 @@
                                     <i class="ri-user-fill icon_input"></i>                           
                               </div>
 
-                              <div class="Add-product-div">
+                              <div style="margin-left: 5px;" class="Add-product-div">
                                     <label for="firstname">Your firstname</label>
                                     <input type="text" id="firstname" name="firstname" required>
                                     <i class="ri-user-fill icon_input"></i>
@@ -108,7 +108,7 @@
                                       <input autocomplete="email" type="email" id="email" name="email" required>
                                       <i class="ri-mail-fill icon_input"></i>
                               </div>
-                              <div class="Add-product-div">
+                              <div style="margin-left: 5px;" class="Add-product-div">
                                      <label for="phone">Your phone</label>
                                      <input autocomplete="email" type="phone" id="phone" name="phone" required>
                                      <i class="ri-phone-fill icon_input"></i>
@@ -122,7 +122,7 @@
                                   <i class="ri-eye-line icon_input" id="reveal_btn"></i>
                             </div>
 
-                            <div class="Add-product-div">
+                            <div style="margin-left: 5px;" class="Add-product-div">
                                  <label for="password2">Confirm your password</label>
                                  <input class="password" id="password2" type="password" name="password2" required>
                                  <i class="ri-eye-line icon_input" id="reveal_btn"></i>
