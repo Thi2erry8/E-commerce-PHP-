@@ -137,14 +137,17 @@
                               </div>
                      </div>
                      
-                       
-                                              <div class=" container_product row">
-                        <div class="Category">
-                               <h2>Pc Gaming</h2>
-                        </div>
-                       <?php
-                            while($row=mysqli_fetch_array($resultPcgam)){
-                        ?>
+                     <!-- Pc Gaming -->
+                    <div class="column">
+                                <div class="Category">
+                                     <h2>Pc Gaming</h2>
+                                </div>
+
+                                <div class=" container_product row">
+                        
+                                <?php
+                                    while($row=mysqli_fetch_array($resultPcgam)){
+                                ?>
                                      <div class="product_card2">
 
                                        <p style="display:none">27'</p>
@@ -173,11 +176,16 @@
                                            </button>     
                                       </div>
                                    </div>
-                        <?php
-                            }
-                        ?>  
+                               <?php
+                                   }
+                               ?>  
 
-                       </div>
+                              </div>
+
+                    </div>
+                     
+
+                    
                     </section>
                     
                 
