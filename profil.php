@@ -72,8 +72,19 @@ session_start();
                               ?>
                               </select>
                               <div class="column btn_action">
-                                <form method="" action="" style=" width: 100%;" class="row">
-                                    <button type="submit" name="Tocart"> Add to card </button>
+                                <?php 
+                                     if (isset($_SESSION['id'])) {
+                                     $State = $conn->query(" SELECT * FROM favoris WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                     $isInCart = (mysqli_num_rows($State) > 0) ;
+                                      $State = $State->fetch_assoc() ;
+                                   }
+                                ?>
+                                <form method="" action="<?= $isInCart ? 'func/del_cart.php' : 'func/add_cart.php'  ?>" style=" width: 100%;" class="row">
+                                       <button style="gap: 7%;" class="row" type="submit" name="Tocart">
+                                                  <?= $isInCart ? '<p>Remove to cart</p><i class="ri-shopping-bag-fill"></i>' :
+                                                                  '<p>Add to cart</p> <i class="ri-shopping-bag-line"></i>'  
+                                                  ?> 
+                                        </button>
                                 </form>
                                     <button> Buy now </button>
                               </div>
