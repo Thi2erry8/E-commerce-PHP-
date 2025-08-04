@@ -79,7 +79,7 @@ session_start();
                                       $State = $State->fetch_assoc() ;
                                    }
                                 ?>
-                                <form method="" action="<?= $isInCart ? 'func/del_cart.php' : 'func/add_cart.php'  ?>" style=" width: 100%;" class="row">
+                                <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" style=" width: 100%;" class="row">
                                        <button style="gap: 7%;" class="row" type="submit" name="Tocart">
                                                   <?= $isInCart ? '<p>Remove to cart</p><i class="ri-shopping-bag-fill"></i>' :
                                                                   '<p>Add to cart</p> <i class="ri-shopping-bag-line"></i>'  
