@@ -46,7 +46,9 @@ a{
 p,label,input,button{
   font-family: 'Nunito';
 }
-
+button{
+    cursor: pointer;
+}
 .p_one,label{
     font-weight: 700;
 }

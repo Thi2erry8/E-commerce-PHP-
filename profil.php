@@ -80,7 +80,8 @@ session_start();
                                    }
                                 ?>
                                 <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" style=" width: 100%;" class="row">
-                                       <button style="gap: 7%;" class="row" type="submit" name="Tocart">
+                                        <input type="hidden" name="produit_id" value='<?= $id ?>'>
+                                        <button style="gap: 7%;" class="row" type="submit" name="Tocart">
                                                   <?= $isInCart ? '<p>Remove to cart</p><i class="ri-shopping-bag-fill"></i>' :
                                                                   '<p>Add to cart</p> <i class="ri-shopping-bag-line"></i>'  
                                                   ?> 
