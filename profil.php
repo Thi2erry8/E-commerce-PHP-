@@ -74,7 +74,7 @@ session_start();
                               <div class="column btn_action">
                                 <?php 
                                      if (isset($_SESSION['id'])) {
-                                     $State = $conn->query(" SELECT * FROM favoris WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                     $State = $conn->query(" SELECT * FROM cart WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
                                      $isInCart = (mysqli_num_rows($State) > 0) ;
                                       $State = $State->fetch_assoc() ;
                                    }
