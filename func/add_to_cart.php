@@ -18,5 +18,5 @@
 
       header('location: '.$_SESSION['prev_page']); 
      }
-/* exit(); */
+ exit(); 
 ?>

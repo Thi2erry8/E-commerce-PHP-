@@ -31,9 +31,6 @@
     $sql ="DELETE FROM favoris WHERE user_id ='$user_id' AND product_id ='$product_id' ";
     
     mysqli_query($conn,$sql);
-    /* if (!mysqli_query($conn,$sql)) {
-    die("Erreur SQL : " . ; // pour détecter les erreurs SQL
-   } */
    
 
    header("location:" .$_SESSION['prev_page']); 
