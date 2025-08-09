@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
      include('./func/app.php');
 
     $p_name="";
@@ -54,12 +55,19 @@ session_start();
                                  <?= $p_description ?>
                              </p> 
                        </div>
+                                <?php 
+                                     if (isset($_SESSION['id'])) {
+                                     $State = $conn->query(" SELECT * FROM cart WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                     $isInCart = (mysqli_num_rows($State) > 0) ;
+                                      $State = $State->fetch_assoc() ;
+                                   }
+                                ?>
 
-                       <div class="column buying_action">
+                       <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" class="column buying_action">
                               <p class="product_price"><span class="expo_price">$</span><?= $p_price?></p>
                               <p class="delivery">Delivry in 3 days</p>
                               <p>In Stock : <span> <?= $p_stock?></span> </p>
-                              <select  name="Quantity" id="">
+                              <select  name="quantity" id="">
                               <?php
                                    $i=1;
                                    while($i<=$p_stock){
@@ -72,25 +80,18 @@ session_start();
                               ?>
                               </select>
                               <div class="column btn_action">
-                                <?php 
-                                     if (isset($_SESSION['id'])) {
-                                     $State = $conn->query(" SELECT * FROM cart WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
-                                     $isInCart = (mysqli_num_rows($State) > 0) ;
-                                      $State = $State->fetch_assoc() ;
-                                   }
-                                ?>
-                                <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" style=" width: 100%;" class="row">
+
+                                <div style=" width: 100%;" class="row">
                                         <input type="hidden" name="produit_id" value='<?= $id ?>'>
                                         <button style="gap: 7%;" class="row" type="submit" name="Tocart">
                                                   <?= $isInCart ? '<p>Remove to cart</p><i class="ri-shopping-bag-fill"></i>' :
                                                                   '<p>Add to cart</p> <i class="ri-shopping-bag-line"></i>'  
                                                   ?> 
                                         </button>
-                                </form>
-                                    <button> Buy now </button>
+                                   </div>
                               </div>
                               
-                       </div> 
+                    </form> 
                  
        </section>
        <div class="column same_category">
