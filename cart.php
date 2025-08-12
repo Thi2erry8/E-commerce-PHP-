@@ -29,15 +29,15 @@ $result = mysqli_query($conn, $query);
            <section class="column evenly">
                      <h2>Your cart</h2>
                      <div class="cart_container">
-                           <div class="row">
+                           <div class="row cart_box">
                                   <div class="img_side">
                                         <img class="cart_img" src="./image/ps5_ontroller.jpg" alt="product picture">
                                   </div>
-                                  <div class="info_side">
-                                        <p class="cart_name"></p> 
-                                        <p class="cart_price"></p> 
-                                        <p class="cart_quantity"></p>
-                                        <p class="cart_total"></p> 
+                                  <div class="column info_side">
+                                        <p class="cart_name">vhjc.cm</p> 
+                                        <p class="cart_price">gc,ghcc,</p> 
+                                        <p class="cart_quantity">gcc,gc,hcg</p>
+                                        <p class="cart_total">fxmbxbxxv</p> 
                                   </div>
                            </div>
                      </div>
