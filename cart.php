@@ -23,6 +23,23 @@ $result = mysqli_query($conn, $query);
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <title>Your favorites</title>   
+     <title>Your cart</title>   
      <?php include('./inc/header.php') ?>
    <main>
+           <section class="column evenly">
+                     <h2>Your cart</h2>
+                     <div class="cart_container">
+                           <div class="row">
+                                  <div class="img_side">
+                                        <img class="cart_img" src="./image/ps5_ontroller.jpg" alt="product picture">
+                                  </div>
+                                  <div class="info_side">
+                                        <p class="cart_name"></p> 
+                                        <p class="cart_price"></p> 
+                                        <p class="cart_quantity"></p>
+                                        <p class="cart_total"></p> 
+                                  </div>
+                           </div>
+                     </div>
+           </section>
+   </main>
