@@ -66,6 +66,7 @@
 }
 .cart_container{
    width:100%;
+   gap: 5px;
 }
 .buying_action select{
     width: 70%;
@@ -73,6 +74,9 @@
     height: 25px;
     max-height: 90px;
     border-radius: 5px;
+}
+.img_side{
+    position:relative;
 }
 .cart_img{
     height:40vh;
@@ -84,9 +88,11 @@
     height: 100%;
     align-items: start;
     justify-content: flex-start;
-    padding: 15px;
+    padding: 15px 20px;
+    
 }
 .cart_box{
     width: 80%;
     height: 40vh;
+    
 }

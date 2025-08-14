@@ -11,9 +11,21 @@
     $user_id = $_SESSION['id'] ;
 
 $query = "
-    SELECT p.* FROM product p
-    JOIN cart c ON c.product_id = p.id
-    WHERE c.user_id = $user_id
+    SELECT 
+    c.user_id,
+    c.product_id,
+    c.Quantity,
+    p.product_name,
+    p.product_price,
+    p.product_description,
+    p.product_img,
+    p.product_category,
+    p.color,
+    p.stock,
+    (p.product_price * c.Quantity) AS total
+FROM cart c
+JOIN product p ON c.product_id = p.id
+WHERE c.user_id = $user_id;
 ";
 $result = mysqli_query($conn, $query);
    if (!$result) {
@@ -29,17 +41,25 @@ $result = mysqli_query($conn, $query);
            <section class="column evenly">
                      <h2>Your cart</h2>
                      <div class="cart_container">
-                           <div class="row cart_box">
-                                  <div class="img_side">
-                                        <img class="cart_img" src="./image/ps5_ontroller.jpg" alt="product picture">
+                         <?php
+                         $i= 0 ;
+                         while($row = $result ->fetch_assoc()){
+                            echo"
+                              <div class='row cart_box'>
+                                  <div class='img_side'>
+                                        <img class='cart_img' src='$row[product_img]' alt='product picture'>
                                   </div>
-                                  <div class="column info_side">
-                                        <p class="cart_name">vhjc.cm</p> 
-                                        <p class="cart_price">gc,ghcc,</p> 
-                                        <p class="cart_quantity">gcc,gc,hcg</p>
-                                        <p class="cart_total">fxmbxbxxv</p> 
+                                  <div class='column info_side'>
+                                        <p class='cart_name'>$row[product_name]</p> 
+                                        <p class='cart_price'>$row[product_price]</p> 
+                                        <p class='cart_quantity'>$row[Quantity]</p>
+                                        <p class='cart_total'>$row[total]</p> 
                                   </div>
                            </div>
+                           
+                           ";
+                              }
+                           ?> 
                      </div>
            </section>
    </main>
