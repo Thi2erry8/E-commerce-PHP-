@@ -38,7 +38,7 @@ $result = mysqli_query($conn, $query);
      <title>Your cart</title>   
      <?php include('./inc/header.php') ?>
    <main>
-           <section class="column evenly">
+           <section class="cart row evenly">
                      <div class="cart_container column"> 
                          <h2>Your cart</h2>
                          <?php
@@ -51,10 +51,17 @@ $result = mysqli_query($conn, $query);
                                         <img class='cart_img' src='$row[product_img]' alt='product picture'>
                                   </div>
                                   <div class='column info_side'>
-                                        <p class='cart_name'>$row[product_name]</p> 
-                                        <p class='cart_price'>$row[product_price]</p> 
+                                        <p style='text-align:center; width:100%' class='cart_name'>$row[product_name]</p>   
+                                       
+                                        <div class='info_side_box row'>
+                                        <p> Quantity :</p>
                                         <p class='cart_quantity'>$row[Quantity]</p>
+                                        </div>
+
+                                        <div class='info_side_box row'>
+                                        <p> Total :</p>
                                         <p class='cart_total'>$row[total]</p> 
+                                        </div>
                                   </div>
                            </div>
                            
@@ -63,6 +70,9 @@ $result = mysqli_query($conn, $query);
                               }
                            ?> 
                            <?= $SommeTotal ?>
+                     </div>
+                     <div class="total_container">
+                           
                      </div>
            </section>
    </main>
