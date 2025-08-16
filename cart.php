@@ -39,10 +39,11 @@ $result = mysqli_query($conn, $query);
      <?php include('./inc/header.php') ?>
    <main>
            <section class="column evenly">
-                     <h2>Your cart</h2>
-                     <div class="cart_container">
+                     <div class="cart_container column"> 
+                         <h2>Your cart</h2>
                          <?php
                          $i= 0 ;
+                         $SommeTotal= 0;
                          while($row = $result ->fetch_assoc()){
                             echo"
                               <div class='row cart_box'>
@@ -58,8 +59,10 @@ $result = mysqli_query($conn, $query);
                            </div>
                            
                            ";
+                           $SommeTotal += $row['total'];
                               }
                            ?> 
+                           <?= $SommeTotal ?>
                      </div>
            </section>
    </main>
