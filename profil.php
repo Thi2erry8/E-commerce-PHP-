@@ -59,10 +59,10 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
                                      if (isset($_SESSION['id'])) {
                                      $State = $conn->query(" SELECT * FROM cart WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
                                      $isInCart = (mysqli_num_rows($State) > 0) ;
-                                      $State = $State->fetch_assoc() ;
+                                     $State = $State->fetch_assoc() ;
                                    }
                                 ?>
-
+                     
                        <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" class="column buying_action">
                               <p class="product_price"><span class="expo_price">$</span><?= $p_price?></p>
                               <p class="delivery">Delivry in 3 days</p>
