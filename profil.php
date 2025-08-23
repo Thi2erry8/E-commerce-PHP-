@@ -2,7 +2,8 @@
 session_start();
 $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
      include('./func/app.php');
-
+    
+    $id="";
     $p_name="";
     $p_price ="";
     $p_description = "";
@@ -22,7 +23,8 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
       // read the row of the selected client from database table
       $sql ="SELECT * FROM product WHERE id=$id";
       $result =$conn->query($sql);
-      $row = $result-> fetch_assoc();
+       
+       $row = $result-> fetch_assoc();
        $p_name = $row['product_name'];
        $p_price = $row['product_price'];
        $p_description = $row['product_description'];
@@ -57,7 +59,7 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
                        </div>
                                 <?php 
                                      if (isset($_SESSION['id'])) {
-                                     $State = $conn->query(" SELECT * FROM cart WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                     $State = $conn->query(" SELECT * FROM cart WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$id) ;
                                      $isInCart = (mysqli_num_rows($State) > 0) ;
                                      $State = $State->fetch_assoc() ;
                                    }
