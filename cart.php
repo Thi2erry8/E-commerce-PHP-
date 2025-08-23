@@ -69,10 +69,21 @@ $result = mysqli_query($conn, $query);
                            $SommeTotal += $row['total'];
                               }
                            ?> 
-                           <?= $SommeTotal ?>
+                          
                      </div>
-                     <div class="total_container">
-                           
+                     <div  class="total_container column">
+                            <div style="justify-content: start;" class="row"><h2>Order Summary</h2></div>
+                            <div style="justify-content:space-between; width:55%" class="row">
+                                   <p>Items :</p>
+                                   <p> <?= $Cart_number ?> </p>
+                            </div>
+                            <div style="justify-content:space-between; width:55%" class="row">
+                                   <p>total :</p>
+                                   <p>  <?= $SommeTotal ?> </p>
+                            </div>
+                            <div class="row"> 
+                                   <Button class="Toconnect_btn">Go to checkout<i class="ri-arrow-right-line"></i></Button>
+                            </div>
                      </div>
            </section>
    </main>
