@@ -63,7 +63,11 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
                                    }
                                 ?>
                      
-                       <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" class="column buying_action">
+                     <div class="column buying_action">
+                     <?php
+                          if (isset($_SESSION['id'])) {
+                     ?>
+                       <form method="post" action="<?= $isInCart ? 'func/del_to_cart.php' : 'func/add_to_cart.php'  ?>" class="column form_buying_action">
                               <p class="product_price"><span class="expo_price">$</span><?= $p_price?></p>
                               <p class="delivery">Delivry in 3 days</p>
                               <p>In Stock : <span> <?= $p_stock?></span> </p>
@@ -92,6 +96,12 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
                               </div>
                               
                     </form> 
+                    <?php }else{ ?>
+
+                         <a class="Toconnect_btn" href="./login.php"> Connect to to Your account</a>
+                    <?php } ?>
+                    
+                </div>
                  
        </section>
        <div class="column same_category">

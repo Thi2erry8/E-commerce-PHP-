@@ -9,6 +9,15 @@
     <script src="./asset/js/index.js" defer></script>
 </head>
 <body>
+    <?php
+          $Cart_number = 0 ;
+          if(isset($_SESSION['id'])){
+          $Cart = "SELECT SUM(Quantity) AS Nombre FROM cart WHERE user_id = ".$_SESSION['id'] ;
+          $resultCart = $conn->query($Cart);
+          $row = $resultCart->fetch_assoc();
+          $Cart_number = $row['Nombre'];
+        }
+    ?>
     <header>
              <div class="left">
                    <p  style="font-family: Montserrat;">
@@ -21,11 +30,8 @@
 
              <div class="right">
                 <?= isset($_SESSION['id']) ? 'Bonjour ' .$_SESSION['nom']  :  '' ?>
-                
-                <?= isset($_SESSION['id']) ? '<button class="btn-login"> <a href="./cart.php"><i class="ri-shopping-cart-line"></i></a></button>'  :  '' ?>
+                <?= isset($_SESSION['id']) ? '<button class="btn-login"> <a href="./cart.php"><i class="ri-shopping-cart-line"></i></a><span class="cart_number">' .$Cart_number .'</span></button>'  :  '' ?>
                 <?= isset($_SESSION['id']) ? '<button class="btn-login"> <a href="./favorite.php">favorites</a></button>'  :  '' ?>
-                    <button class="btn-login"> <a href="./login.php">login</a></button>
-
-
+                <?= isset($_SESSION['id']) ? '<button class="btn-login log"> <a href="../func/logout.php">logout</a></button>'  :  '<button class="btn-login log"> <a href="./login.php">login</a></button>' ?>
              </div>
     </header>
