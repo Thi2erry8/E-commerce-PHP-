@@ -1,3 +1,6 @@
+<?php 
+      include './func/app.php';      
+?>
 <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./asset/style/style.css">
@@ -32,6 +35,6 @@
                 <?= isset($_SESSION['id']) ? 'Bonjour ' .$_SESSION['nom']  :  '' ?>
                 <?= isset($_SESSION['id']) ? '<button class="btn-login"> <a href="./cart.php"><i class="ri-shopping-cart-line"></i></a><span class="cart_number">' .$Cart_number .'</span></button>'  :  '' ?>
                 <?= isset($_SESSION['id']) ? '<button class="btn-login"> <a href="./favorite.php">favorites</a></button>'  :  '' ?>
-                <?= isset($_SESSION['id']) ? '<button class="btn-login log"> <a href="../func/logout.php">logout</a></button>'  :  '<button class="btn-login log"> <a href="./login.php">login</a></button>' ?>
+                <?= isset($_SESSION['id']) ? '<button class="btn-login log"> <a href="./func/logout.php">logout</a></button>'  :  '<button class="btn-login log"> <a href="./login.php">login</a></button>' ?>
              </div>
     </header>
