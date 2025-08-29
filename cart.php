@@ -82,7 +82,8 @@ $result = mysqli_query($conn, $query);
                                    <p>  <?= $SommeTotal ?> </p>
                             </div>
                             <div class="row"> 
-                                   <Button class="Toconnect_btn">Go to checkout<i class="ri-arrow-right-line"></i></Button>
+                                   <Button class="Toconnect_btn"><a href="./payment.php
+                                   ">Go to checkout</a><i class="ri-arrow-right-line"></i></Button>
                             </div>
                      </div>
            </section>

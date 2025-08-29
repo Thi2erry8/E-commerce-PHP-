@@ -1,9 +1,9 @@
 <?php 
     session_start();
-    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
-    include('./inc/header.php'); 
+    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI']; 
     include('./func/app.php');
-     
+    include('./inc/header.php');
+    
      $error_msg = "";
    //Register
     if (isset($_POST['register'])) {
