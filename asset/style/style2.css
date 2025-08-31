@@ -104,6 +104,24 @@
    border: 2px solid var(--color4);
    border-radius: 15px;
 }
+.cart_top{
+    width: 100%;
+    justify-content: space-around;
+    gap:50px;
+}
+.cart_top:nth-child(2){
+     justify-content: space-evenly;
+     gap:20px;
+}
+.cart_top h3{
+    font-size: 1em;
+}
+.cart_top button{
+    border: none;
+    background: none;
+    color: var(--red5);
+    font-size: 0.9em;
+}
 .buying_action select{
     width: 70%;
     background-color: var(--color6);
@@ -113,24 +131,18 @@
 }
 .img_side{
     position:relative;
+    gap: 10px;
 }
 .cart_img{
-    height:40vh;
+    height:8vh;
     width: auto;
     border-radius: 10px;
 }
-.info_side{
-    width: 30%;
-    height: 100%;
-    align-items: start;
-    justify-content: flex-start;
-    padding: 15px 20px;
-    
-}
 .cart_box{
     width: 80%;
-    height: 40vh; 
+    height: 10vh; 
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 .total_container{
     width: 30%;
@@ -141,7 +153,7 @@
     
 }
 .info_side_box{
-    width: 100%;
-    gap: 10px;
-    justify-content: space-evenly;
+    width: fit-content;
+    margin-right: 10px;
 }
+

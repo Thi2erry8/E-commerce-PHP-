@@ -31,6 +31,13 @@ $result = mysqli_query($conn, $query);
    if (!$result) {
     die("Erreur SQL : " . mysqli_error($conn)); // pour détecter les erreurs SQL
 }
+/* function productDefine(a){
+   if (a > 1) {
+       echo " products";
+   }else{
+       echo " products";
+   }
+} */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,29 +47,32 @@ $result = mysqli_query($conn, $query);
    <main>
            <section class="cart row evenly">
                      <div class="cart_container column"> 
-                         <h2>Your cart</h2>
+                        <div style="padding: 0px 20px;" class="row cart_top">
+                               <h2>Your cart (<span><?= $Cart_number ?> products</span>)</h2>
+
+                                <button class="clear_cart">Clear cart</button>
+                        </div>
+                        <div class="row cart_top">
+                              <h3>Product</h3>
+                              <h3>Count</h3>
+                              <h3>Price</h3>
+                        </div>
                          <?php
                          $i= 0 ;
                          $SommeTotal= 0;
                          while($row = $result ->fetch_assoc()){
                             echo"
                               <div class='row cart_box'>
-                                  <div class='img_side'>
+                                  <div class='img_side row'>
                                         <img class='cart_img' src='$row[product_img]' alt='product picture'>
+                                        <p style='text-align:center; width:100%' class='cart_name'>$row[product_name]</p>
                                   </div>
-                                  <div class='column info_side'>
-                                        <p style='text-align:center; width:100%' class='cart_name'>$row[product_name]</p>   
-                                       
-                                        <div class='info_side_box row'>
-                                        <p> Quantity :</p>
+                                  <div class='info_side_box row'>
                                         <p class='cart_quantity'>$row[Quantity]</p>
-                                        </div>
-
-                                        <div class='info_side_box row'>
-                                        <p> Total :</p>
-                                        <p class='cart_total'>$row[total]</p> 
-                                        </div>
                                   </div>
+                                  <div class='info_side_box row'>
+                                        <p class='cart_total'>$row[total]</p> 
+                                  </div>        
                            </div>
                            
                            ";
