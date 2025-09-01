@@ -156,4 +156,6 @@
     width: fit-content;
     margin-right: 10px;
 }
-
+.alternative{
+    width: 30%;
+}
