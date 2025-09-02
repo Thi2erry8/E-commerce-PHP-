@@ -47,8 +47,13 @@ if(!$result){
 
       <section class="column evenly">
               <h1>All products</h1>
-              <a href="./create.php">Add product</a>
               <div class="product-grid">
+                   <div class="product_card">
+                         <a href="./create.php"> 
+                               <p style="text-align:center; margin: 0 ; font-weight: 600; font-size:2em"><i class="ri-add-line"></i></p>
+                               <p>Add product</p>
+                         </a>
+                   </div>
                       <?php
                       $i= 0;
                            while($row = $result->fetch_assoc()){
@@ -86,7 +91,6 @@ if(!$result){
                            }
                       ?>
                  </div>
-                 <a href="./edit.php">fsjsyxzfgzgz</a>
       </section>
 </main>
 <?php include('./inc/footer.php') ?>
