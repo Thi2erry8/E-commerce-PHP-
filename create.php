@@ -57,7 +57,7 @@
                       </div>
 
                       <div class="Add-product-div">
-                            <input type="number" name="Pprice" placeholder="Enter product price" required>
+                            <input type="number" step="0.01" name="Pprice" placeholder="Enter product price" required>
                       </div>
 
                       <div class="Add-product-div">

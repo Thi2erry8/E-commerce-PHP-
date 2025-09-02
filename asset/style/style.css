@@ -148,6 +148,9 @@ section{
 .Add-product-section{
     justify-content: space-around; 
 }
+.Add-product-section form{
+    gap: 15px;
+}
 form input{
     border-radius: 5px;
     border:1px solid var(--color3);
