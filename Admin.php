@@ -10,7 +10,7 @@
      <title>Admin Panel</title>
 <?php 
 $msg ="";
-include('./inc/header.php'); 
+include('./inc/header_admin.php'); 
 include('./func/app.php');
 $data1 = "SELECT * FROM product";
 $result = $conn->query($data1);
