@@ -8,7 +8,7 @@
      die("Vous devez être connecté en tant que utilisateur.");     
         }
 
-    $user_id = $_SESSION['id'] ;
+    $user_id = $_SESSION['id'];
 
 $query = "
     SELECT 

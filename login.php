@@ -36,6 +36,7 @@
               $_SESSION['role']='utilisateur';
               $_SESSION['nom']= $lastname ;
               $_SESSION['id']= $row['id'];
+              $_SESSION['email']= $email;
 
               header('location: ./index.php');
           
@@ -61,6 +62,7 @@
                  $_SESSION['role']='utilisateur';
                  $_SESSION['nom']= $req['nom'] ;
                  $_SESSION['id']= $req['id'];
+                 $_SESSION['email']= $email;
 
                 header('location: ./index.php');
 
