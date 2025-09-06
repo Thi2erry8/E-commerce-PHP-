@@ -8,8 +8,21 @@
     $query = "
     SELECT
     c.Quantity,
-    
+    p.product_name
+    FROM cart c 
+    JOIN product p ON c.product_id = p.id
+    WHERE c.user_id = $user_id;
     ";
+    $result = mysqli_query($conn, $query);
+   if (!$result) {
+    die("Erreur SQL : " . mysqli_error($conn)); // pour détecter les erreurs SQL
+   }
+
+    $produits = "";
+    while ($row = mysqli_fetch_assoc($result)){
+        $produits .= $row['product_name'] . "(x" .$row['Quantity'] .")\n";
+    }
+
     if(isset($_POST['submit'])){
      
       $O_name = $_POST['Oname'];
@@ -25,11 +38,17 @@
       Prénom : $O_prename
       Téléphone : $O_phone
       Adresse : $O_addresse
-      Produits : ...
+      Produits commandés: 
+      $produits
 ";
-       $headers = "From: boutique@exemple.com";
-
-      mail($to, $subject, $message, $headers); 
+       $headers = "From: " .$_SESSION['email'];
+      
+       if (mail($to, $subject, $message, $headers) ) {
+          echo "Email envoyee";
+       }else {
+        echo "Erreur";
+       }
+      
 
        
 }   
@@ -51,7 +70,6 @@
 <body>
        <main>
        <section class=" Add-product-section column">
-               <?= $_SESSION['email'] ?>
                  <form method="POST" action="" class="column" enctype="multipart/form-data">
                       <div class="Add-product-div">
                             <h2 class="form_title">
