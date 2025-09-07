@@ -4,6 +4,8 @@
     include('./func/app.php');
     include('./inc/header.php');
     
+
+
     $user_id = $_SESSION['id'];
     $query = "
     SELECT
@@ -29,8 +31,7 @@
       $O_prename = $_POST['Oprename'];
       $O_phone = $_POST['Ophone'];
       $O_addresse = $_POST['Odescrip'];
-      
-      $to = "jonathanaugustin056@gmail.com";
+      $to = "lifeinfiny971@gmail.com";
       $subject = "Nouvelle commande";
       $message = "
       Nouvelle commande reçue :
@@ -41,7 +42,7 @@
       Produits commandés: 
       $produits
 ";
-       $headers = "From: " .$_SESSION['email'];
+       $headers = "FROM: " .$_SESSION['email'];
       
        if (mail($to, $subject, $message, $headers) ) {
           echo "Email envoyee";
