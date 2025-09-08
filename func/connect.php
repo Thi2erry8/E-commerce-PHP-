@@ -1,6 +1,5 @@
 <?php 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+
 
 echo "✅ PHP fonctionne<br>";
 $db_server = "sql105.infinityfree.com";
