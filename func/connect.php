@@ -11,11 +11,8 @@ $conn = mysqli_connect($db_server,
                        $db_pass,
                        $db_name);
 
-      if($conn){
-        echo '<i class="ri-wifi-line"></i>';
-      }
-      else{
-        echo '<i class="ri-wifi-line"></i>';
-      }
+      if (!$conn) {
+    die("Erreur connexion MySQL : " . mysqli_connect_error());
+}
 
 ?>
