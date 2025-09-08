@@ -2,13 +2,13 @@ name: 🚀 Deploy to your_domain
 
 on:
   workflow_dispatch: 
-    push:
-        branches:
-        - main
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
-    name: 🎉 Deploy to your_domain
+    name: 🎉 Deploy to your_domain_name
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,7 @@ jobs:
       - name: 📂 Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ftpupload.net 
+          server: ftpupload.net # Change if using another host
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: /htdocs/ # Replace with your correct path
