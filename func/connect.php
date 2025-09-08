@@ -1,5 +1,8 @@
 <?php 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 
+echo "✅ PHP fonctionne<br>";
 $db_server = "sql105.infinityfree.com";
 $db_user = "if0_39849868";
 $db_pass = "nograS009k5MvfO";
