@@ -1,26 +1,25 @@
-name: 🚀 Deploy to your_domain
+name: 🚀 Deploy PHP app to InfinityFree via FTP
 
 on:
-  workflow_dispatch: 
   push:
     branches:
-      - main
+      - main   # ou master selon ta branche
 
 jobs:
   deploy:
-    name: 🎉 Deploy to your_domain_name
     runs-on: ubuntu-latest
 
     steps:
-      - name: 🚚 Get latest code
-        uses: actions/checkout@v4
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
 
-      - name: 📂 Sync files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: 📂 Sync files to InfinityFree (FTP)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftpupload.net # Change if using another host
+          server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /lovestoblog.com/htdocs/ # Replace with your correct path
-          retries: 3
-          retryDelay: 10
+          protocol: ftp
+          port: 21
+          local-dir: ./
+          server-dir: /htdocs/
