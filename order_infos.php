@@ -2,7 +2,7 @@
     session_start();
 
     include('./func/app.php');
-    include('./inc/header.php');
+    
     
 
 
@@ -25,29 +25,26 @@
         $produits .= $row['product_name'] . "(x" .$row['Quantity'] .")\n";
     }
 
-    if(isset($_POST['submit'])){
+/*     if(isset($_POST['submit'])){
      
       $O_name = $_POST['Oname'];
       $O_prename = $_POST['Oprename'];
-      $FullName = $O_name +" "+$O_prename; 
+      $FullName = $O_name. " " .$O_prename; 
       $O_phone = $_POST['Ophone'];
       $O_addresse = $_POST['Odescrip'];
       $to = "lifeinfiny971@gmail.com";
       $subject = "Nouvelle commande";
-      /* $message = "
-      Nouvelle commande reçue :
-      Nom : $O_name
-      Prénom : $O_prename
-      Téléphone : $O_phone
-      Adresse : $O_addresse
-      Produits commandés: 
-      $produits"; */
+      $message = "Produits commandés: 
+                  $produits";
+
        
-     echo"";
+     echo"<script>
+                     SendMail('$FullName','$to','$subject','$O_phone','$O_addresse')
+            </script>";
       
 
        
-}   
+ } */  
    $data1 = "SELECT * FROM product";
    $result = $conn->query($data1);
 
@@ -63,13 +60,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <?php include('./inc/header.php'); ?>
 <body>
+      <script>
+
+
+      </script>
        <main>
-            <script>
-                    
-            </script>
+            
        <section class=" Add-product-section column">
-                 <form method="POST" action="" class="column" enctype="multipart/form-data">
+               <?php
+                        if(isset($_POST['submit'])){
+     
+      $O_name = $_POST['Oname'];
+      $O_prename = $_POST['Oprename'];
+      $FullName = $O_name. " " .$O_prename; 
+      $O_phone = $_POST['Ophone'];
+      $O_addresse = $_POST['Odescrip'];
+      $to = "lifeinfiny971@gmail.com";
+      $subject = "Nouvelle commande";
+      $message = "Produits commandés: \n" . $produits;
+
+       
+     echo"<script>
+                     SendMail('$FullName','$to','$subject','$O_phone','$O_addresse',". json_encode($message) .")
+            </script>";
+      
+
+       
+} 
+               
+               ?>  
+               <form method="POST" action="" class="column" enctype="multipart/form-data">
                       <div class="Add-product-div">
                             <h2 class="form_title">
                                  Order Infos

@@ -40,7 +40,7 @@ favBtn.forEach((btn) =>{
 });
 
 // SEND MAIL
-function SendMail(name,email,subject,phone,address,commande) {
+                  function SendMail(name,email,subject,phone,address,commande) {
    let parms = {
     name: name ,
     email: email ,
@@ -50,5 +50,15 @@ function SendMail(name,email,subject,phone,address,commande) {
     commande: commande 
    }
 
-   emailjs.send("service_4s7qrpo","template_yhsc5ac",parms).then(alert("Email Sent !!"))
+      emailjs.send("service_4s7qrpo", "template_yhsc5ac", parms)
+      .then(function(response) {
+         console.log("SUCCESS. Status:", response.status, "Text:", response.text);
+         alert("Email envoyé avec succès! Vérifiez vos spams si vous ne le voyez pas.");
+      })
+      .catch(function(error) {
+         console.error("FAILED...", error);
+         alert("Erreur: " + (error.text || "Échec de l'envoi"));
+      });
 }
+
+console.log('test'); 
