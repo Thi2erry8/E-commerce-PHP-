@@ -38,3 +38,17 @@ favBtn.forEach((btn) =>{
       btn.classList.toggle('ri-heart-fill');
   });
 });
+
+// SEND MAIL
+function SendMail(name,email,subject,phone,address,commande) {
+   let parms = {
+    name: name ,
+    email: email ,
+    subject: subject ,
+    phone: phone ,
+    address: address ,
+    commande: commande 
+   }
+
+   emailjs.send("service_4s7qrpo","template_yhsc5ac",parms).then(alert("Email Sent !!"))
+}

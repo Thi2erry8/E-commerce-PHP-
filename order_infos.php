@@ -29,26 +29,21 @@
      
       $O_name = $_POST['Oname'];
       $O_prename = $_POST['Oprename'];
+      $FullName = $O_name +" "+$O_prename; 
       $O_phone = $_POST['Ophone'];
       $O_addresse = $_POST['Odescrip'];
       $to = "lifeinfiny971@gmail.com";
       $subject = "Nouvelle commande";
-      $message = "
+      /* $message = "
       Nouvelle commande reçue :
       Nom : $O_name
       Prénom : $O_prename
       Téléphone : $O_phone
       Adresse : $O_addresse
       Produits commandés: 
-      $produits
-";
-       $headers = "FROM: " .$_SESSION['email'];
-      
-       if (mail($to, $subject, $message, $headers) ) {
-          echo "Email envoyee";
-       }else {
-        echo "Erreur";
-       }
+      $produits"; */
+       
+     echo"";
       
 
        
@@ -70,6 +65,9 @@
     <title>Document</title>
 <body>
        <main>
+            <script>
+                    
+            </script>
        <section class=" Add-product-section column">
                  <form method="POST" action="" class="column" enctype="multipart/form-data">
                       <div class="Add-product-div">
