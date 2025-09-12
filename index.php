@@ -44,7 +44,7 @@ ini_set('error_log', __DIR__ . '/php-error.log');
              <section class="section_product column">
                      <div class="column">
                            <div class="Category">
-                               <h2>Pc Gaming</h2> 
+                               <h2>Console</h2> 
                         </div>
                         <div class=" container_product row">
                        <?php
@@ -188,7 +188,7 @@ ini_set('error_log', __DIR__ . '/php-error.log');
                      <!-- Accessorie -->
                     <div class="column">
                                 <div class="Category">
-                                     <h2>Pc Gaming</h2>
+                                     <h2>Accessories</h2>
                                 </div>
 
                                 <div class=" container_product row">
