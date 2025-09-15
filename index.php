@@ -19,7 +19,7 @@
       $resultPcgam = mysqli_query($conn,$sqlPcgam);
       $resultAcess = mysqli_query($conn,$sqlAcess);
 
-      //
+      
 
 ?>
 <!DOCTYPE html>
@@ -75,12 +75,7 @@
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
                                                  <a href='./profil.php?id= <?=$row['id'] ?>'> 
-                                                    <i class="ri-information-line"></i>
-                                                </a>
-                                           </button>
-
-                                           <button class="action_box_btn2">
-                                                   <i class="ri-shopping-cart-line"></i>
+                                                    <p>More info</p>
                                                 </a>
                                            </button>     
                                       </div>
@@ -119,10 +114,10 @@
                                         </div>
                                         <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
-                                                    <i class="ri-information-line"></i>
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'> 
+                                                    <p>More info</p>
                                                 </a>
-                                           </button>     
+                                           </button>    
                                       </div>
                                    </div>
                                      <?php
@@ -159,11 +154,10 @@
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
-                                                    <i class="ri-information-line"></i>
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'> 
+                                                    <p>More info</p>
                                                 </a>
-                                           </button>
-    
+                                           </button>  
                                       </div>
                                    </div>
                                <?php
@@ -201,11 +195,10 @@
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
-                                                    <i class="ri-information-line"></i>
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'> 
+                                                    <p>More info</p>
                                                 </a>
                                            </button>
-     
                                       </div>
                                    </div>
                                <?php

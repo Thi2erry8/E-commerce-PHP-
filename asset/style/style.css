@@ -61,6 +61,13 @@ header div{
     display: flex;
     align-items: center;
 }
+.nav-menu{
+    display: none;
+    font-size: 1.5em;
+}
+.nav-icon{
+    visibility: hidden;
+}
 .ri-home-4-line{
     font-size: 1.5em;
 }
@@ -319,7 +326,7 @@ display: none;
     min-width: 120px;
     height: 265px;
     background-color: var(--color7) ;
-    border: 1px solid var(--color5);
+    border: 1px solid var(--color1);
     border-radius: var(--radius1);
     margin: 25px;
 }
@@ -336,8 +343,8 @@ display: none;
     font-size: 1.3em;
     border-radius:50%;
     color: var(--red5);
-    background-color: var(--color6);
-    border: 1px solid var(--color3);
+    background-color: var(--color7);
+    border: 1px solid var(--color1);
     transition: 0.5s ease-in-out;
     overflow: hidden;
 }
@@ -349,10 +356,15 @@ display: none;
 }
 .action_box_btn2{
     border: none;
-    cursor: pointer;
-    color: var(--color2);
-    font-size: 1.3em;
-    background-color: transparent;
+    cursor: pointer;border: 1px solid var(--color1);
+    color: var(--color7);
+    font-size: 0.8em;
+    background-color: var(--color1);
+    border-radius: 50px;
+}
+.action_box_btn2 p{
+    padding: 8px;
+    margin: 0px;
 }
 .container_product{
     position: relative;
@@ -380,3 +392,21 @@ display: none;
 }
 
 /*                                  RESPONSIVE                             */
+@media(max-width:769px){
+    /*     HEADER     */
+    .nav-icon{
+    visibility: visible;
+    font-size: 0.7em !important;
+    }
+    .nav-menu{
+        display: block;
+    }
+    .right{
+        position: fixed;
+        width: 100vw;
+        background: white;
+        margin-top: 50px;
+        z-index: 25;
+    }
+    
+}
