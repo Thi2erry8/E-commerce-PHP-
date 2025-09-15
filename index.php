@@ -4,9 +4,7 @@
 
     include('./func/app.php');
       //SelectDataProduct
-error_reporting(E_ALL);
-ini_set('log_errors', 1);
-ini_set('error_log', __DIR__ . '/php-error.log');
+
 
 
      
@@ -124,11 +122,6 @@ ini_set('error_log', __DIR__ . '/php-error.log');
                                                  <a href='./profil.php?id= <?=$row['id'] ?>'>
                                                     <i class="ri-information-line"></i>
                                                 </a>
-                                           </button>
-
-                                           <button class="action_box_btn2">
-                                                   <i class="ri-shopping-cart-line"></i>
-                                                </a>
                                            </button>     
                                       </div>
                                    </div>
@@ -170,11 +163,7 @@ ini_set('error_log', __DIR__ . '/php-error.log');
                                                     <i class="ri-information-line"></i>
                                                 </a>
                                            </button>
-
-                                           <button class="action_box_btn2">
-                                                   <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                           </button>     
+    
                                       </div>
                                    </div>
                                <?php
@@ -216,11 +205,7 @@ ini_set('error_log', __DIR__ . '/php-error.log');
                                                     <i class="ri-information-line"></i>
                                                 </a>
                                            </button>
-
-                                           <button class="action_box_btn2">
-                                                   <i class="ri-shopping-cart-line"></i>
-                                                </a>
-                                           </button>     
+     
                                       </div>
                                    </div>
                                <?php
