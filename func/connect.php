@@ -9,9 +9,9 @@ $db_pass = "nograS009k5MvfO";
 $db_name = "if0_39849868_portfolio"; */
 
 $db_server = "localhost";
-$db_user = "root";
-$db_pass = "";
-$db_name = "gamerhouse";
+$db_user = "u465150164_root";
+$db_pass = "18026Abz$";
+$db_name = "u465150164_GamerHouse";
 
 $conn = mysqli_connect($db_server,
                        $db_user,
