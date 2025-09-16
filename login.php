@@ -1,8 +1,8 @@
 <?php 
+
     session_start();
     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI']; 
     include('./func/app.php');
-    include('./inc/header.php');
     
      $error_msg = "";
    //Register
@@ -80,7 +80,11 @@
      
     
 ?>  
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>GamerHouse</title>   
+     <?php include('./inc/header.php') ?> 
 <main>
        <section> 
                  
@@ -170,3 +174,4 @@
                  
        </section>
 </main>
+</body>

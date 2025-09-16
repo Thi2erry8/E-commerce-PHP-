@@ -108,7 +108,7 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
        </section>
        <div class="column same_category">
             <h1>Same category( <?= $p_category?>)</h1>
-            <div class="row">
+            <div class="container_product row">
                      <?php  
                             $sql2="SELECT * FROM product WHERE product_category='$p_category' AND id !=$id ";
                             $result2 = $conn->query($sql2) ;  
@@ -119,9 +119,17 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
                                      <div class="product_card2">
 
                                        <p style="display:none">27'</p>
-                                       <div class="id_circle2">
-                                           <i class="ri-heart-line"></i>
-                                       </div>
+                                     
+                                   <?php if (isset($_SESSION['id'])) { ?>
+                                       <form method="post" action=" <?= $isfavorite ? './func/del_fav.php' : './func/add_fav.php' ?> " class="id_circle2">
+                                             <input type="hidden" name="produit_id" value="<?= $row['id'] ?>">
+                                             <button class="fav_btn" type="submit">
+                                               <?= $isfavorite ? '<i class="ri-heart-fill"></i>':'<i class="ri-heart-line"></i>' ?>    
+                                             </button>
+                                       </form>
+                                    
+                                    <?php  } ?>
+
                                        <div class="img_box">
                                            <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
                                        </div>
@@ -132,8 +140,8 @@ $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
                                       </div>
                                       <div class="action_box row">
                                            <button class="action_box_btn2">
-                                                 <a href='./profil.php?id= <?=$row['id'] ?>'>
-                                                    <i class="ri-information-line"></i>
+                                                 <a href='./profil.php?id= <?=$row['id'] ?>'> 
+                                                    <p>More info</p>
                                                 </a>
                                            </button>     
                                       </div>

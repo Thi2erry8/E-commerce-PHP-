@@ -5,7 +5,7 @@
 }
 .product_img_container{
     height: 70vh;
-    width: 50%;
+    width: 35%;
     overflow: hidden;
 }
 .product_img{
@@ -15,7 +15,7 @@
 }
 .product_description{
     height: 70vh;
-    width:25%;
+    width:35%;
     background-color: var(--color7);
     margin-left: -5%;
     padding-top: 10px;

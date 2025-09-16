@@ -40,7 +40,7 @@ favBtn.forEach((btn) =>{
 });
 
 // SEND MAIL
-                  function SendMail(name,email,subject,phone,address,commande) {
+/*                   function SendMail(name,email,subject,phone,address,commande) {
    let parms = {
     name: name ,
     email: email ,
@@ -61,4 +61,6 @@ favBtn.forEach((btn) =>{
       });
 }
 
+
+ */
 console.log('test'); 

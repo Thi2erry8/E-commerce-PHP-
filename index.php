@@ -1,6 +1,12 @@
 <?php 
-    session_start(); 
-    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI'];
+    session_start();
+    $_SESSION['prev_page'] = $_SERVER['REQUEST_URI']; 
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php include('./inc/head.php') ?>
+   <?php 
+    
 
     include('./func/app.php');
       //SelectDataProduct
@@ -22,12 +28,11 @@
       
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <title>GamerHouse</title>   
-     <?php include('./inc/header.php') ?>
-    <main>
+
+
+<body>
+      <?php include('./inc/header.php') ?>
+       <main>
              <div class="hero">
                  <!-- " -->
              <div class="hero-text">
@@ -58,12 +63,18 @@
                         ?>
                              <div class="product_card2">
                                        <p style="display:none">27'</p>
+                                    
+                                    <?php if (isset($_SESSION['id'])) { ?>
                                        <form method="post" action=" <?= $isfavorite ? './func/del_fav.php' : './func/add_fav.php' ?> " class="id_circle2">
                                              <input type="hidden" name="produit_id" value="<?= $row['id'] ?>">
                                              <button class="fav_btn" type="submit">
                                                <?= $isfavorite ? '<i class="ri-heart-fill"></i>':'<i class="ri-heart-line"></i>' ?>    
                                              </button>
                                        </form>
+                                    
+                                    <?php  } ?>
+                                    
+                                    
                                        <div class="img_box">
                                            <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
                                        </div>
@@ -97,13 +108,28 @@
              
                                   <div class=" container_product row">
                                    <?php
+
+                                       $isfavorite = false ;
                                        while($row=mysqli_fetch_array($resultCont)){
+                                       if (isset($_SESSION['id'])) {
+                                         $State = $conn->query(" SELECT * FROM favoris WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                          $isfavorite = (mysqli_num_rows($State) > 0) ;
+                                          $State = $State->fetch_assoc() ;
+                            } 
                                      ?>
                                         <div class="product_card2">
                                             <p style="display:none">27'</p>
-                                         <div class="id_circle2">
-                                           <i class="ri-heart-line"></i>
-                                         </div>
+                                   
+                                     <?php if (isset($_SESSION['id'])) { ?>
+                                       <form method="post" action=" <?= $isfavorite ? './func/del_fav.php' : './func/add_fav.php' ?> " class="id_circle2">
+                                             <input type="hidden" name="produit_id" value="<?= $row['id'] ?>">
+                                             <button class="fav_btn" type="submit">
+                                               <?= $isfavorite ? '<i class="ri-heart-fill"></i>':'<i class="ri-heart-line"></i>' ?>    
+                                             </button>
+                                       </form>
+                                    
+                                    <?php  } ?>
+
                                          <div class="img_box">
                                            <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
                                          </div>
@@ -136,14 +162,28 @@
                                 <div class=" container_product row">
                         
                                 <?php
+                                $isfavorite = false ;
                                     while($row=mysqli_fetch_array($resultPcgam)){
+                                       if (isset($_SESSION['id'])) {
+                                         $State = $conn->query(" SELECT * FROM favoris WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                          $isfavorite = (mysqli_num_rows($State) > 0) ;
+                                          $State = $State->fetch_assoc() ;
+                            }                                        
                                 ?>
                                      <div class="product_card2">
 
                                        <p style="display:none">27'</p>
-                                       <div class="id_circle2">
-                                           <i class="ri-heart-line"></i>
-                                       </div>
+                                       
+                                    <?php if (isset($_SESSION['id'])) { ?>
+                                       <form method="post" action=" <?= $isfavorite ? './func/del_fav.php' : './func/add_fav.php' ?> " class="id_circle2">
+                                             <input type="hidden" name="produit_id" value="<?= $row['id'] ?>">
+                                             <button class="fav_btn" type="submit">
+                                               <?= $isfavorite ? '<i class="ri-heart-fill"></i>':'<i class="ri-heart-line"></i>' ?>    
+                                             </button>
+                                       </form>
+                                    
+                                    <?php  } ?>
+
                                        <div class="img_box">
                                            <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
                                        </div>
@@ -177,14 +217,27 @@
                                 <div class=" container_product row">
                         
                                 <?php
+                                $isfavorite = false ;
                                     while($row=mysqli_fetch_array($resultAcess)){
+                                        if (isset($_SESSION['id'])) {
+                                         $State = $conn->query(" SELECT * FROM favoris WHERE user_id =" .$_SESSION['id'] ." AND product_id =" .$row['id']) ;
+                                          $isfavorite = (mysqli_num_rows($State) > 0) ;
+                                          $State = $State->fetch_assoc() ;
+                            } 
                                 ?>
                                      <div class="product_card2">
 
                                        <p style="display:none">27'</p>
-                                       <div class="id_circle2">
-                                           <i class="ri-heart-line"></i>
-                                       </div>
+                                  
+                                       <?php if (isset($_SESSION['id'])) { ?>
+                                       <form method="post" action=" <?= $isfavorite ? './func/del_fav.php' : './func/add_fav.php' ?> " class="id_circle2">
+                                             <input type="hidden" name="produit_id" value="<?= $row['id'] ?>">
+                                             <button class="fav_btn" type="submit">
+                                               <?= $isfavorite ? '<i class="ri-heart-fill"></i>':'<i class="ri-heart-line"></i>' ?>    
+                                             </button>
+                                       </form>
+                                    
+                                    <?php  } ?>
                                        <div class="img_box">
                                            <img class="box_img" src="<?= $row['product_img'] ?>" alt="GAMDIAS ATX Mid Tower">
                                        </div>
@@ -213,5 +266,7 @@
                     </section>
                     
                 
-    </main>
+        </main>
+</body> 
+</html>
        
