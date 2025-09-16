@@ -1,7 +1,11 @@
 <?php 
-
     session_start();
     $_SESSION['prev_page'] = $_SERVER['REQUEST_URI']; 
+    ?>
+    <!DOCTYPE html>
+    <html lang="en">
+    <?php include('./inc/head.php') ?>
+    <?php
     include('./func/app.php');
     
      $error_msg = "";
@@ -79,11 +83,8 @@
           }
      
     
-?>  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-     <title>GamerHouse</title>   
+?>  <
+body>   
      <?php include('./inc/header.php') ?> 
 <main>
        <section> 
@@ -165,13 +166,14 @@
                          <p>Don't have an account <button class="switch_btn">register</button></p>
                  </form>
             
-                 <script>
+<!--                  <script>
                          setTimeout(function() {
                          const err = document.getElementById("error");
                                 if (err) err.remove();
                           }, 3000);
-                </script>
+                </script> -->
                  
        </section>
 </main>
 </body>
+</html>

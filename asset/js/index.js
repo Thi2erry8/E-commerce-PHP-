@@ -60,7 +60,36 @@ favBtn.forEach((btn) =>{
          alert("Erreur: " + (error.text || "Échec de l'envoi"));
       });
 }
-
-
  */
+
+function SendMail(name,email,subject,phone,address,commande) {
+    const parms = {
+        service_id: "service_4s7qrpo",
+        template_id: "template_yhsc5ac",
+        user_id: "xfESGVZuL4c8YUi6G",
+        template_params: {
+            name,
+            email,
+            subject,
+            phone,
+            address,
+            commande
+        }
+    };
+
+    fetch("sendmail.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(parms)
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("Email envoyé !");
+        console.log(data);
+    })
+    .catch(err => {
+        alert("Erreur lors de l'envoi");
+        console.error(err);
+    });
+}
 console.log('test'); 
